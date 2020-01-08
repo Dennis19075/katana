@@ -18,7 +18,7 @@
 .fs-15 {font-size: 15px;}
 .fs-16 {font-size: 16px;}
 .fs-17 {font-size: 17px;}
-.fs-18 {font-size: 18px;}
+.fs-18 {font-size: 28px;}
 .fs-19 {font-size: 19px;}
 .fs-20 {font-size: 20px;}
 .fs-21 {font-size: 21px;}
@@ -3060,7 +3060,7 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 
 .s-text7 {
 	font-family: Montserrat-Regular;
-	font-size: 13px;
+	font-size: 16px; /*letras del footer del medio*/
 	color: #555555;
 	line-height: 1.8;
 }
@@ -3124,14 +3124,14 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 
 .s-text16 {
 	font-family: Montserrat-Regular;
-	font-size: 12px;
+	font-size: 14px;
 	color: #555555;
 	line-height: 1.8;
 }
 
 .s-text17 {
 	font-family: Montserrat-Regular;
-	font-size: 12px;
+	font-size: 14px;
 	color: #888888;
 	line-height: 1.8;
 }
