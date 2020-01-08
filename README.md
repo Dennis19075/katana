@@ -1,2 +1,2 @@
 # katana
-Proyecto para la MIPYMES Katana
+Proyecto para la MIPYME Katana
