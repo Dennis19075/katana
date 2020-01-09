@@ -27,8 +27,6 @@
 					actionListener="#{beanProducto.actionListenerColapsarPanel()}"></p:commandButton>
 			</f:facet>
 			<p:panelGrid columns="2">
-				<h:outputText value="ID" />
-				<p:inputText value="#{beanProducto.tipo_producto.idTipoProducto}"></p:inputText>
 				<h:outputText value="Nombre" />
 				<p:inputText value="#{beanProducto.tipo_producto.nombre}"></p:inputText>
 				<p:commandButton value="Insertar" icon="fa fa-save"
@@ -69,7 +67,7 @@
 			<p:growl>
 				<p:autoUpdate></p:autoUpdate>
 			</p:growl>
-			<h:outputText value="ID:" />
+			<h:outputText value="ID: " />
 			<h:outputText value="#{beanProducto.tipo_productoSeleccionado.idTipoProducto}" />
 			<p:panelGrid columns="2">
 				<h:outputText value="Nombre" />

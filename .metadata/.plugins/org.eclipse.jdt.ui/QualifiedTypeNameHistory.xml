@@ -7,7 +7,7 @@
 <fullyQualifiedTypeName name="katana.model.entities.UsuUsuario"/>
 <fullyQualifiedTypeName name="katana.model.entities.UsuRol"/>
 <fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
-<fullyQualifiedTypeName name="katana.model.entities.ProColor"/>
 <fullyQualifiedTypeName name="katana.model.manager.ManagerProducto"/>
 <fullyQualifiedTypeName name="katana.model.entities.ProTipoProducto"/>
+<fullyQualifiedTypeName name="katana.model.entities.ProColor"/>
 </qualifiedTypeNameHistroy>

@@ -16,11 +16,15 @@ public class PedEstado implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="id_estado", unique=true, nullable=false, precision=10)
-	private long idEstado;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_estado", unique=true, nullable=false)
+	private Integer idEstado;
 
 	@Column(nullable=false, length=50)
 	private String descripcion;
+
+	@Column(length=50)
+	private String nombre;
 
 	//bi-directional many-to-one association to PedPedido
 	@OneToMany(mappedBy="pedEstado")
@@ -29,11 +33,11 @@ public class PedEstado implements Serializable {
 	public PedEstado() {
 	}
 
-	public long getIdEstado() {
+	public Integer getIdEstado() {
 		return this.idEstado;
 	}
 
-	public void setIdEstado(long idEstado) {
+	public void setIdEstado(Integer idEstado) {
 		this.idEstado = idEstado;
 	}
 
@@ -43,6 +47,14 @@ public class PedEstado implements Serializable {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	public String getNombre() {
+		return this.nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public List<PedPedido> getPedPedidos() {

@@ -124,3 +124,87 @@ ene. 09, 2020 09:48:01.10 Fontconfig error: Cannot load default config file
 ene. 09, 2020 09:48:40.49 [3071:3095:0109/094840.489629:ERROR:connection_factory_impl.cc(418)] Failed to connect to MCS endpoint with error -106
 ene. 09, 2020 09:49:44.05 [3071:3095:0109/094944.058137:ERROR:connection_factory_impl.cc(418)] Failed to connect to MCS endpoint with error -105
 ene. 09, 2020 09:50:24.97 [3071:3095:0109/095024.976672:ERROR:connection_factory_impl.cc(418)] Failed to connect to MCS endpoint with error -106
+ene. 09, 2020 10:02:51.78 [3071:3095:0109/100251.778780:ERROR:connection_factory_impl.cc(418)] Failed to connect to MCS endpoint with error -106
+ene. 09, 2020 10:03:40.93 [3071:3095:0109/100340.929306:ERROR:connection_factory_impl.cc(418)] Failed to connect to MCS endpoint with error -106
+ene. 09, 2020 11:07:27.00 [3071:3095:0109/110726.740077:ERROR:connection_factory_impl.cc(418)] Failed to connect to MCS endpoint with error -21
+ene. 09, 2020 11:07:28.99 [3071:3095:0109/110728.998694:ERROR:connection_factory_impl.cc(418)] Failed to connect to MCS endpoint with error -21
+ene. 09, 2020 11:07:35.46 [3071:3095:0109/110735.460855:ERROR:connection_factory_impl.cc(418)] Failed to connect to MCS endpoint with error -106
+ene. 09, 2020 11:08:00.78 [3071:3095:0109/110800.786557:ERROR:connection_factory_impl.cc(418)] Failed to connect to MCS endpoint with error -102
+ene. 09, 2020 11:45:58.75 [3071:3095:0109/114558.757019:ERROR:connection_factory_impl.cc(418)] Failed to connect to MCS endpoint with error -106
+ene. 09, 2020 11:46:02.98 [3071:3095:0109/114602.981995:ERROR:connection_factory_impl.cc(418)] Failed to connect to MCS endpoint with error -21
+ene. 09, 2020 11:56:03.66 Abriendo en una sesión existente del navegador
+ene. 09, 2020 11:56:04.66 [4214:1:0109/115604.665575:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 11:56:04.66 [4214:1:0109/115604.666489:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 11:56:04.86 [4214:1:0109/115604.868319:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 11:56:04.86 [4214:1:0109/115604.869323:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 12:35:21.30 Abriendo en una sesión existente del navegador
+ene. 09, 2020 12:35:21.76 [7359:1:0109/123521.759696:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 12:35:21.76 [7359:1:0109/123521.760392:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 12:35:21.78 [7359:1:0109/123521.781127:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 12:35:21.78 [7359:1:0109/123521.781963:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 12:37:17.55 [3071:3095:0109/123717.555312:ERROR:socket_stream.cc(218)] Closing stream with result -2
+
+ene. 09, 2020 13:16:46.09 NEW SESSION
+ene. 09, 2020 13:16:46.13 [3375:3375:0109/131646.077191:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 1 times!
+ene. 09, 2020 13:16:48.30 [3412:1:0109/131648.301504:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 13:16:48.30 [3412:1:0109/131648.303521:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 13:16:48.47 [3412:1:0109/131648.470009:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 13:16:48.47 [3412:1:0109/131648.472173:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 13:16:48.48 [3412:1:0109/131648.479550:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 13:16:48.48 [3412:1:0109/131648.481178:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 13:16:48.51 [3412:1:0109/131648.510915:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 13:16:48.51 [3412:1:0109/131648.512640:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 13:20:43.54 [4021:1:0109/132043.548478:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 13:20:43.55 [4021:1:0109/132043.550599:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 13:20:43.63 [4021:1:0109/132043.633859:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 13:20:43.63 [4021:1:0109/132043.636528:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 13:20:46.69 [4008:4008:0109/132046.691583:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 1 times!
+ene. 09, 2020 13:20:55.08 [4008:4008:0109/132055.085788:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 2 times!
+ene. 09, 2020 13:20:55.09 [4008:4008:0109/132055.095876:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 3 times!
+ene. 09, 2020 13:21:01.62 [4008:4008:0109/132101.621456:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 4 times!
+ene. 09, 2020 13:21:01.62 [4008:4008:0109/132101.628645:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 5 times!
+ene. 09, 2020 13:21:21.33 [4008:4008:0109/132121.329761:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 6 times!
+ene. 09, 2020 13:21:32.89 [4008:4008:0109/132132.898549:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 7 times!
+ene. 09, 2020 13:21:39.27 [4008:4008:0109/132139.269456:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 8 times!
+ene. 09, 2020 13:21:49.27 [4008:4008:0109/132149.271919:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 9 times!
+ene. 09, 2020 13:21:49.27 [4008:4008:0109/132149.277144:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 10 times!
+ene. 09, 2020 13:21:49.29 [4008:4008:0109/132149.294046:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 11 times!
+ene. 09, 2020 13:21:56.51 [4008:4008:0109/132156.514698:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 12 times!
+ene. 09, 2020 13:22:28.80 [4008:4008:0109/132228.802489:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 13 times!
+ene. 09, 2020 13:22:28.80 [4008:4008:0109/132228.809252:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 14 times!
+ene. 09, 2020 13:22:28.81 [4008:4008:0109/132228.817580:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 15 times!
+ene. 09, 2020 13:22:31.09 [4008:4008:0109/132231.099002:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 16 times!
+ene. 09, 2020 13:22:49.34 [4008:4008:0109/132249.347693:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 17 times!
+ene. 09, 2020 13:22:49.35 [4008:4008:0109/132249.358168:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 18 times!
+
+ene. 09, 2020 14:39:36.25 NEW SESSION
+ene. 09, 2020 14:39:36.26 [3652:3652:0109/143936.255333:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 1 times!
+ene. 09, 2020 14:39:39.34 [3684:1:0109/143939.344866:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 14:39:39.34 [3684:1:0109/143939.347353:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 14:39:39.78 [3684:1:0109/143939.787080:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 14:39:39.78 [3684:1:0109/143939.787859:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 14:39:43.13 [3652:3652:0109/143943.139484:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 2 times!
+ene. 09, 2020 14:39:51.22 [3652:3652:0109/143951.220943:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 3 times!
+ene. 09, 2020 14:39:55.24 [3652:3652:0109/143955.244682:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 4 times!
+ene. 09, 2020 14:40:04.74 [3652:3652:0109/144004.748642:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 5 times!
+ene. 09, 2020 14:40:04.75 [3652:3652:0109/144004.754697:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 6 times!
+ene. 09, 2020 14:40:04.76 [3652:3652:0109/144004.762299:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 7 times!
+ene. 09, 2020 14:40:15.21 [3652:3652:0109/144015.210508:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 8 times!
+ene. 09, 2020 14:40:26.62 [3652:3652:0109/144026.628710:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 9 times!
+ene. 09, 2020 14:40:26.63 [3652:3652:0109/144026.637453:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 10 times!
+ene. 09, 2020 15:01:48.47 Abriendo en una sesión existente del navegador
+ene. 09, 2020 15:01:48.55 [3652:3652:0109/150148.556757:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 11 times!
+ene. 09, 2020 15:01:48.56 [3652:3652:0109/150148.569664:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 12 times!
+ene. 09, 2020 15:01:52.54 [3652:3652:0109/150152.539741:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 13 times!
+ene. 09, 2020 15:02:00.95 [3652:3652:0109/150200.949692:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 14 times!
+ene. 09, 2020 15:02:00.95 [3652:3652:0109/150200.952268:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 15 times!
+ene. 09, 2020 15:02:06.27 [3652:3652:0109/150206.275808:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 16 times!
+ene. 09, 2020 15:02:06.28 [3652:3652:0109/150206.285949:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 17 times!
+ene. 09, 2020 15:03:09.19 [3652:3652:0109/150309.195606:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 18 times!
+ene. 09, 2020 15:03:09.19 [3652:3652:0109/150309.199376:ERROR:gl_surface_presentation_helper.cc(259)] GetVSyncParametersIfAvailable() failed for 19 times!
+ene. 09, 2020 15:03:41.42 Abriendo en una sesión existente del navegador
+ene. 09, 2020 15:06:35.99 Abriendo en una sesión existente del navegador
+ene. 09, 2020 15:06:36.89 [5901:1:0109/150636.894738:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 15:06:36.89 [5901:1:0109/150636.895513:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 15:06:36.91 [5901:1:0109/150636.913000:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.
+ene. 09, 2020 15:06:36.91 [5901:1:0109/150636.914137:ERROR:child_process_sandbox_support_impl_linux.cc(79)] FontService unique font name matching request did not receive a response.

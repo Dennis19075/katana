@@ -21,6 +21,7 @@ public class ManagerProducto {
 	@PersistenceContext
 	private EntityManager em;
 
+
     /**
      * Default constructor. 
      */
@@ -35,15 +36,15 @@ public class ManagerProducto {
     	return q.getResultList();
     }
     
-    public ProTipoProducto findTipoProductoById(Long id) {
+    public ProTipoProducto findTipoProductoById(int id) {
     	return em.find(ProTipoProducto.class, id);
     }
     public void insertarTipoProducto(ProTipoProducto tipo_producto) throws Exception {
-    	if(findTipoProductoById(tipo_producto.getIdTipoProducto())!=null)
-    		throw new Exception("Ya existe este tipo de prodcto");
-        em.persist(tipo_producto);
+        ProTipoProducto tipo=new ProTipoProducto();
+        tipo.setNombre(tipo_producto.getNombre());
+    	em.persist(tipo);
     }
-    public void eliminarTipoProducto(long id) {
+    public void eliminarTipoProducto(int id) {
     	ProTipoProducto tipo_producto=findTipoProductoById(id);
     	if(tipo_producto!=null)
     		em.remove(tipo_producto);
@@ -59,20 +60,20 @@ public class ManagerProducto {
     
     /**CRUD DE LA TALBLA pro_color*/
     public List<ProColor> findAllColor(){
-    	String consulta="select o from ProColor o order by o.id_color";
+    	String consulta="select o from ProColor o";
     	Query q=em.createQuery(consulta, ProColor.class);
     	return q.getResultList();
     }
     
-    public ProColor findColorById(Long id) {
+    public ProColor findColorById(int id) {
     	return em.find(ProColor.class, id);
     }
     public void insertarColor(ProColor color) throws Exception {
-    	if(findTipoProductoById(color.getIdColor())!=null)
-    		throw new Exception("Ya existe este color");
-        em.persist(color);
+    	ProColor save_color=new ProColor();
+    	save_color.setNombre(color.getNombre());
+        em.persist(save_color);
     }
-    public void eliminarColor(long id) {
+    public void eliminarColor(int id) {
     	ProColor color=findColorById(id);
     	if(color!=null)
     		em.remove(color);

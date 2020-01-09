@@ -30,7 +30,7 @@ public class ManagerUsuario {
     
     /**CRUD DE LA TALBLA usu_usuario*/
     public List<UsuUsuario> findAllUsuarios(){
-    	String consulta="select o from UsuUsuario o order by o.apellido";
+    	String consulta="select o from UsuUsuario o";
     	Query q=em.createNamedQuery(consulta, UsuUsuario.class);
     	return q.getResultList();
     }
@@ -61,7 +61,7 @@ public class ManagerUsuario {
     
     /**CRUD DE LA TABLA usu_rol*/
     public List<UsuRol> findAllROl(){
-    	String consulta="select o from UsuRol o order by o.id_rol";
+    	String consulta="select o from UsuRol o";
     	Query q=em.createNamedQuery(consulta, UsuRol.class);
     	return q.getResultList();
     }

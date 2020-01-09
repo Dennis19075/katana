@@ -144,41 +144,70 @@
   <core validator-id="batch-verification"/>
   <core validator-id="jboss.jsf.core"/>
   <el>
-   <linked-el length="82" name="%2" offset="2154" path="%3"/>
-   <linked-el length="46" name="%2" offset="1033" path="%3"/>
-   <linked-el length="50" name="%2" offset="3048" path="%3"/>
-   <linked-el length="26" name="%2" offset="1965" path="%3"/>
-   <linked-el length="59" name="%2" offset="2893" path="%3"/>
-   <linked-el length="34" name="%2" offset="1772" path="%3"/>
-   <linked-el length="31" name="%2" offset="1868" path="%3"/>
-   <linked-el length="38" name="%2" offset="1154" path="%3"/>
-   <linked-el length="39" name="%2" offset="1667" path="%3"/>
-   <linked-el length="82" name="%0" offset="2154" path="%3"/>
-   <linked-el length="32" name="%0" offset="697" path="%3"/>
-   <linked-el length="46" name="%0" offset="1033" path="%3"/>
-   <linked-el length="77" name="%0" offset="2457" path="%3"/>
-   <linked-el length="50" name="%0" offset="3048" path="%3"/>
-   <linked-el length="36" name="%0" offset="1527" path="%3"/>
-   <linked-el length="59" name="%0" offset="2893" path="%3"/>
-   <linked-el length="38" name="%0" offset="1154" path="%3"/>
-   <linked-el length="54" name="%0" offset="1312" path="%3"/>
+   <linked-el length="59" name="%2" offset="2777" path="%3"/>
+   <linked-el length="26" name="%2" offset="1848" path="%3"/>
+   <linked-el length="34" name="%2" offset="1655" path="%3"/>
+   <linked-el length="31" name="%2" offset="1751" path="%3"/>
+   <linked-el length="39" name="%2" offset="1550" path="%3"/>
+   <linked-el length="38" name="%2" offset="1037" path="%3"/>
+   <linked-el length="82" name="%2" offset="2037" path="%3"/>
+   <linked-el length="50" name="%2" offset="2932" path="%3"/>
+   <linked-el length="42" name="%0" offset="2801" path="%4"/>
+   <linked-el length="29" name="%0" offset="1392" path="%4"/>
+   <linked-el length="38" name="%0" offset="1037" path="%3"/>
+   <linked-el length="30" name="%0" offset="1045" path="%4"/>
+   <linked-el length="54" name="%0" offset="1195" path="%3"/>
+   <linked-el length="36" name="%0" offset="1410" path="%3"/>
    <linked-el length="47" name="%0" offset="868" path="%3"/>
-   <linked-el length="56" name="%0" offset="3235" path="%3"/>
-   <linked-el length="82" name="%1" offset="2154" path="%3"/>
-   <linked-el length="46" name="%1" offset="1033" path="%3"/>
-   <linked-el length="50" name="%1" offset="3048" path="%3"/>
-   <linked-el length="26" name="%1" offset="1965" path="%3"/>
-   <linked-el length="59" name="%1" offset="2893" path="%3"/>
-   <linked-el length="34" name="%1" offset="1772" path="%3"/>
-   <linked-el length="31" name="%1" offset="1868" path="%3"/>
-   <linked-el length="38" name="%1" offset="1154" path="%3"/>
-   <linked-el length="54" name="%1" offset="1312" path="%3"/>
+   <linked-el length="77" name="%0" offset="2340" path="%3"/>
+   <linked-el length="32" name="%0" offset="697" path="%3"/>
+   <linked-el length="59" name="%0" offset="2777" path="%3"/>
+   <linked-el length="38" name="%0" offset="704" path="%4"/>
+   <linked-el length="62" name="%0" offset="2239" path="%4"/>
+   <linked-el length="53" name="%0" offset="870" path="%4"/>
+   <linked-el length="60" name="%0" offset="1958" path="%4"/>
+   <linked-el length="44" name="%0" offset="2661" path="%4"/>
+   <linked-el length="49" name="%0" offset="2980" path="%4"/>
+   <linked-el length="56" name="%0" offset="3119" path="%3"/>
+   <linked-el length="82" name="%0" offset="2037" path="%3"/>
+   <linked-el length="50" name="%0" offset="2932" path="%3"/>
+   <linked-el length="47" name="%0" offset="1195" path="%4"/>
+   <linked-el length="18" name="%5" offset="1777" path="%4"/>
+   <linked-el length="42" name="%5" offset="2801" path="%4"/>
+   <linked-el length="60" name="%5" offset="1958" path="%4"/>
+   <linked-el length="30" name="%5" offset="1045" path="%4"/>
+   <linked-el length="44" name="%5" offset="2661" path="%4"/>
+   <linked-el length="23" name="%5" offset="1688" path="%4"/>
+   <linked-el length="19" name="%5" offset="1607" path="%4"/>
+   <linked-el length="24" name="%5" offset="1517" path="%4"/>
+   <linked-el length="18" name="%1" offset="1777" path="%4"/>
+   <linked-el length="42" name="%1" offset="2801" path="%4"/>
+   <linked-el length="29" name="%1" offset="1392" path="%4"/>
+   <linked-el length="54" name="%1" offset="1195" path="%3"/>
    <linked-el length="47" name="%1" offset="868" path="%3"/>
-   <linked-el length="39" name="%1" offset="1667" path="%3"/>
-   <linked-el length="56" name="%1" offset="3235" path="%3"/>
+   <linked-el length="77" name="%1" offset="2340" path="%3"/>
    <linked-el length="32" name="%1" offset="697" path="%3"/>
-   <linked-el length="77" name="%1" offset="2457" path="%3"/>
-   <linked-el length="36" name="%1" offset="1527" path="%3"/>
+   <linked-el length="26" name="%1" offset="1848" path="%3"/>
+   <linked-el length="38" name="%1" offset="704" path="%4"/>
+   <linked-el length="34" name="%1" offset="1655" path="%3"/>
+   <linked-el length="62" name="%1" offset="2239" path="%4"/>
+   <linked-el length="56" name="%1" offset="3119" path="%3"/>
+   <linked-el length="19" name="%1" offset="1607" path="%4"/>
+   <linked-el length="82" name="%1" offset="2037" path="%3"/>
+   <linked-el length="50" name="%1" offset="2932" path="%3"/>
+   <linked-el length="39" name="%1" offset="1550" path="%3"/>
+   <linked-el length="38" name="%1" offset="1037" path="%3"/>
+   <linked-el length="30" name="%1" offset="1045" path="%4"/>
+   <linked-el length="36" name="%1" offset="1410" path="%3"/>
+   <linked-el length="23" name="%1" offset="1688" path="%4"/>
+   <linked-el length="59" name="%1" offset="2777" path="%3"/>
+   <linked-el length="31" name="%1" offset="1751" path="%3"/>
+   <linked-el length="53" name="%1" offset="870" path="%4"/>
+   <linked-el length="60" name="%1" offset="1958" path="%4"/>
+   <linked-el length="44" name="%1" offset="2661" path="%4"/>
+   <linked-el length="49" name="%1" offset="2980" path="%4"/>
+   <linked-el length="24" name="%1" offset="1517" path="%4"/>
+   <linked-el length="47" name="%1" offset="1195" path="%4"/>
   </el>
  </validation>
  <aliases>
@@ -186,6 +215,10 @@
    path="/katana_projectEJB/ejbModule/katana/model/entities/ProTipoProducto.java" value="%2"/>
   <alias
    path="/katana_projectWeb/src/katana/controller/BeanProducto.java" value="%0"/>
+  <alias
+   path="/katana_projectWeb/WebContent/productos/product-color.xhtml" value="%4"/>
+  <alias
+   path="/katana_projectEJB/ejbModule/katana/model/entities/ProColor.java" value="%5"/>
   <alias
    path="/katana_projectWeb/WebContent/productos/product-type.xhtml" value="%3"/>
   <alias path="beanProducto" value="%1"/>
