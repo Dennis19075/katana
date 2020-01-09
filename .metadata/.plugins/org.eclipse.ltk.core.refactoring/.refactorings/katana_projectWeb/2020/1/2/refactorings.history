@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;product-type.xhtml&apos; to &apos;productos&apos;" description="Move &apos;product-type.xhtml&apos; to &apos;productos&apos;" destination="WebContent/productos" element1="WebContent/product-type.xhtml" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1578530546858" updateReferences="true"/>
+</session>

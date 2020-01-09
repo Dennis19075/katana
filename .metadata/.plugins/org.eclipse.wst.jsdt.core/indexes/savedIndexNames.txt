@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+/home/ronald/Documentos/katana-projects/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+21828777.index
+1740643150.index
+3969001465.index
+257493692.index
+303058567.index
+2290926507.index
+2779777764.index
+3625231275.index

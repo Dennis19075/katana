@@ -1,0 +1,5 @@
+package katana.controller;
+
+public class BeanProducto {
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;JSFUtil.java&apos; to &apos;katana_projectWeb/src/katana.controller&apos;&#x0A;- Original project: &apos;academicoWeb&apos;&#x0A;- Destination element: &apos;katana_projectWeb/src/katana.controller&apos;&#x0A;- Original element: &apos;academico.controller.JSFUtil.java&apos;" description="Copy compilation unit" destination="=katana_projectWeb/src&lt;katana.controller" element1="/src&lt;academico.controller{JSFUtil.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1578532093198" units="1" version="1.0"/>
+</session>
