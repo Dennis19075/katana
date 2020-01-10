@@ -1,4 +1,5 @@
 package katana.model.manager;
+import katana.model.entities.ProTipoProducto;
 import katana.model.entities.UsuRol;
 import katana.model.entities.UsuUsuario;
 
@@ -31,7 +32,7 @@ public class ManagerUsuario {
     /**CRUD DE LA TALBLA usu_usuario*/
     public List<UsuUsuario> findAllUsuarios(){
     	String consulta="select o from UsuUsuario o";
-    	Query q=em.createNamedQuery(consulta, UsuUsuario.class);
+    	Query q=em.createQuery(consulta, UsuUsuario.class);
     	return q.getResultList();
     }
     
@@ -62,19 +63,20 @@ public class ManagerUsuario {
     /**CRUD DE LA TABLA usu_rol*/
     public List<UsuRol> findAllROl(){
     	String consulta="select o from UsuRol o";
-    	Query q=em.createNamedQuery(consulta, UsuRol.class);
+    	Query q=em.createQuery(consulta, UsuRol.class);
     	return q.getResultList();
     }
     
-    public UsuRol findRolById(long id) {
+    public UsuRol findRolById(int id) {
     	return em.find(UsuRol.class, id);
     }
     public void insertarRol(UsuRol rol) throws Exception {
-    	if(findRolById(rol.getIdRol())!=null)
-    		throw new Exception("Ya existe ese rol");
+    	UsuRol save_rol=new UsuRol();
+        save_rol.setNombre(rol.getNombre());
+        save_rol.setDescripcion(rol.getDescripcion());
         em.persist(rol);
     }
-    public void eliminarRol(long id) {
+    public void eliminarRol(int id) {
     	UsuRol rol=findRolById(id);
     	if(rol!=null)
     		em.remove(rol);
