@@ -6,6 +6,7 @@ import javax.inject.Named;
 
 import katana.controller.JSFUtil;
 import katana.model.entities.ProColor;
+import katana.model.entities.ProTalla;
 import katana.model.entities.ProTipoProducto;
 import katana.model.manager.ManagerProducto;
 
@@ -20,12 +21,16 @@ public class BeanProducto implements Serializable{
 	private ManagerProducto managerProducto;
 	private List<ProTipoProducto> listaTipoProducto;
 	private List<ProColor> listaColor;
+	private List<ProTalla> listaTalla;
 	private ProTipoProducto tipo_producto;
 	private ProColor color;
+	private ProTalla talla;
 	private boolean panelColapsado;
 	private boolean panelColapsado_Color;
+	private boolean panelColapsado_Talla;
 	private ProTipoProducto tipo_productoSeleccionado;
 	private ProColor colorSeleccionado;
+	private ProTalla tallaSeleccionada;
 	@PostConstruct
 	public void inicializar() 
 	{
@@ -33,8 +38,10 @@ public class BeanProducto implements Serializable{
 	    listaColor=managerProducto.findAllColor();
 	    tipo_producto=new ProTipoProducto();
 	    color=new ProColor();
+	    talla=new ProTalla();
 	    panelColapsado=true;
 	    panelColapsado_Color=true;
+	    panelColapsado_Talla=true;
 	}
 	
 	/*BEAN PARA pro_tipo_producto*/
@@ -165,5 +172,72 @@ public class BeanProducto implements Serializable{
 	
 	
 	
+/*BEAN PARA pro_talla*/
+	
+	public void actionListenerColapsarPanel_Talla() {
+		panelColapsado_Talla=!panelColapsado_Talla;
+	}
+	public void actionListenerInsertarTalla() {
+		try {
+			managerProducto.insertarTalla(talla);
+			listaTalla=managerProducto.findAllTalla();
+			talla = new  ProTalla();
+			JSFUtil.crearMensajeInfo("Se ha insertado la talla.");
+		} catch (Exception e) {
+			JSFUtil.crearMensajeError(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	public void actionListenerSeleccionarTalla(ProTalla talla) {
+		tallaSeleccionada=talla;
+	}
+	public void actionListenerActualizarTalla() {
+		try {
+			managerProducto.actualizarTalla(tallaSeleccionada);
+			listaTalla=managerProducto.findAllTalla();
+			JSFUtil.crearMensajeInfo("Datos actualizados.");
+		} catch (Exception e) {
+			JSFUtil.crearMensajeError(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	public void actionListenerEliminarTalla(int id) {
+		managerProducto.eliminarTalla(id);
+		listaTalla=managerProducto.findAllTalla();
+		JSFUtil.crearMensajeInfo("Talla eliminada.");
+	}
+
+	public List<ProTalla> getListaTalla() {
+		return listaTalla;
+	}
+
+	public void setListaTalla(List<ProTalla> listaTalla) {
+		this.listaTalla = listaTalla;
+	}
+
+	public ProTalla getTalla() {
+		return talla;
+	}
+
+	public void setTalla(ProTalla talla) {
+		this.talla = talla;
+	}
+
+
+	public ProTalla getTallaSeleccionada() {
+		return tallaSeleccionada;
+	}
+
+	public void setTallaSeleccionada(ProTalla tallaSeleccionada) {
+		this.tallaSeleccionada = tallaSeleccionada;
+	}
+
+	public boolean isPanelColapsado_Talla() {
+		return panelColapsado_Talla;
+	}
+
+	public void setPanelColapsado_Talla(boolean panelColapsado_Talla) {
+		this.panelColapsado_Talla = panelColapsado_Talla;
+	}
 
 }
