@@ -14,5 +14,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="src" path="/katana_projectEJB"/>
+	<classpathentry kind="lib" path="/home/ronald/Descargas/Instaladores/wildfly-14.0.1.Final/modules/system/layers/base/javax/inject/api/main/javax.inject-1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

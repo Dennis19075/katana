@@ -56,6 +56,7 @@ public class BeanColor implements Serializable{
 			listaColor=managerColor.findAllColor();
 			JSFUtil.crearMensajeInfo("Datos actualizados");
 		} catch (Exception e) {
+			listaColor=managerColor.findAllColor();
 			JSFUtil.crearMensajeError(e.getMessage());
 			e.printStackTrace();
 		}
