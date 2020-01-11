@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import katana.model.entities.PedEstado;
 import katana.model.entities.PedIva;
 
 
@@ -54,12 +55,15 @@ public class ManagerPedido {
     public void actualizarIva(PedIva iva) throws Exception {
     	PedIva e=findIvaById(iva.getIdIva());
     	if(e==null)
-    		throw new Exception("No existe ese tipo de producto");
+    		throw new Exception("No existe ese iva");
     	e.setCantidad(iva.getCantidad());
         e.setFechaInicio(iva.getFechaInicio());
         e.setFechaFin(iva.getFechaFin());
     	em.merge(e);
     	
     }
+
+    
+    
     
 }
