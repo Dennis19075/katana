@@ -6,6 +6,7 @@ import javax.inject.Named;
 
 import katana.controller.JSFUtil;
 import katana.model.entities.UsuRol;
+import katana.model.manager.ManagerRol;
 import katana.model.manager.ManagerUsuario;
 
 import java.io.Serializable;
@@ -13,10 +14,10 @@ import java.util.List;
 
 @Named
 @SessionScoped
-public class BeanUsuario implements Serializable{
+public class BeanRol implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@EJB
-	private ManagerUsuario managerUsuario;
+	private ManagerRol managerRol;
 	private List<UsuRol> listaRol;
 	private UsuRol rol;
 	private boolean panelColapsadoRol;
@@ -24,7 +25,7 @@ public class BeanUsuario implements Serializable{
 	@PostConstruct
 	public void inicializar() 
 	{
-	    listaRol=managerUsuario.findAllROl();
+	    listaRol=managerRol.findAllROl();
 	    rol=new UsuRol();
 	    panelColapsadoRol=true;
 	}
@@ -36,8 +37,8 @@ public class BeanUsuario implements Serializable{
 	}
 	public void actionListenerInsertarRol() {
 		try {
-			managerUsuario.insertarRol(rol);
-			listaRol=managerUsuario.findAllROl();
+			managerRol.insertarRol(rol);
+			listaRol=managerRol.findAllROl();
 			rol=new UsuRol();
 			JSFUtil.crearMensajeInfo("Se ha insertado el Rol");
 		} catch (Exception e) {
@@ -50,8 +51,8 @@ public class BeanUsuario implements Serializable{
 	}
 	public void actionListenerActualizarRol() {
 		try {
-			managerUsuario.actualizarRol(rolSeleccionado);
-			listaRol=managerUsuario.findAllROl();
+			managerRol.actualizarRol(rolSeleccionado);
+			listaRol=managerRol.findAllROl();
 			JSFUtil.crearMensajeInfo("Datos actualizados");
 		} catch (Exception e) {
 			JSFUtil.crearMensajeError(e.getMessage());
@@ -59,8 +60,8 @@ public class BeanUsuario implements Serializable{
 		}
 	}
 	public void actionListenerEliminarRol(int id) {
-		managerUsuario.eliminarRol(id);
-		listaRol=managerUsuario.findAllROl();
+		managerRol.eliminarRol(id);
+		listaRol=managerRol.findAllROl();
 		JSFUtil.crearMensajeInfo("Rol eliminado");
 	}
 

@@ -1,5 +1,5 @@
 package katana.model.manager;
-import katana.model.entities.ProTipoProducto;
+
 import katana.model.entities.UsuRol;
 import katana.model.entities.UsuUsuario;
 
@@ -60,35 +60,5 @@ public class ManagerUsuario {
     	
     }
     
-    /**CRUD DE LA TABLA usu_rol*/
-    public List<UsuRol> findAllROl(){
-    	String consulta="select o from UsuRol o";
-    	Query q=em.createQuery(consulta, UsuRol.class);
-    	return q.getResultList();
-    }
     
-    public UsuRol findRolById(int id) {
-    	return em.find(UsuRol.class, id);
-    }
-    public void insertarRol(UsuRol rol) throws Exception {
-    	UsuRol save_rol=new UsuRol();
-        save_rol.setNombre(rol.getNombre());
-        save_rol.setDescripcion(rol.getDescripcion());
-        em.persist(rol);
-    }
-    public void eliminarRol(int id) {
-    	UsuRol rol=findRolById(id);
-    	if(rol!=null)
-    		em.remove(rol);
-    }
-    public void actualizarRol(UsuRol rol) throws Exception {
-    	UsuRol e=findRolById(rol.getIdRol());
-    	if(e==null)
-    		throw new Exception("No existe el rol especificado");
-    	e.setNombre(rol.getNombre());
-    	e.setDescripcion(rol.getDescripcion());
-    	em.merge(e);
-    	
-    }
-
 }

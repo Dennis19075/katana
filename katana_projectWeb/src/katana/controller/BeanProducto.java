@@ -20,28 +20,15 @@ public class BeanProducto implements Serializable{
 	@EJB
 	private ManagerProducto managerProducto;
 	private List<ProTipoProducto> listaTipoProducto;
-	private List<ProColor> listaColor;
-	private List<ProTalla> listaTalla;
 	private ProTipoProducto tipo_producto;
-	private ProColor color;
-	private ProTalla talla;
 	private boolean panelColapsado;
-	private boolean panelColapsado_Color;
-	private boolean panelColapsado_Talla;
 	private ProTipoProducto tipo_productoSeleccionado;
-	private ProColor colorSeleccionado;
-	private ProTalla tallaSeleccionada;
 	@PostConstruct
 	public void inicializar() 
 	{
 	    listaTipoProducto=managerProducto.findAllTipoProducto();
-	    listaColor=managerProducto.findAllColor();
 	    tipo_producto=new ProTipoProducto();
-	    color=new ProColor();
-	    talla=new ProTalla();
 	    panelColapsado=true;
-	    panelColapsado_Color=true;
-	    panelColapsado_Talla=true;
 	}
 	
 	/*BEAN PARA pro_tipo_producto*/
@@ -103,72 +90,6 @@ public class BeanProducto implements Serializable{
 		this.tipo_productoSeleccionado = tipo_productoSeleccionado;
 	}
 	
-/*BEAN PARA pro_color*/
-	
-	public void actionListenerColapsarPanel_Color() {
-		panelColapsado_Color=!panelColapsado_Color;
-	}
-	public void actionListenerInsertarColor() {
-		try {
-			managerProducto.insertarColor(color);
-			listaColor=managerProducto.findAllColor();
-			color=new ProColor();
-			JSFUtil.crearMensajeInfo("Se ha insertado el Color");
-		} catch (Exception e) {
-			JSFUtil.crearMensajeError(e.getMessage());
-			e.printStackTrace();
-		}
-	}
-	public void actionListenerSeleccionarColor(ProColor Color) {
-		colorSeleccionado=Color;
-	}
-	public void actionListenerActualizarColor() {
-		try {
-			managerProducto.actualizarColor(colorSeleccionado);
-			listaColor=managerProducto.findAllColor();
-			JSFUtil.crearMensajeInfo("Datos actualizados");
-		} catch (Exception e) {
-			JSFUtil.crearMensajeError(e.getMessage());
-			e.printStackTrace();
-		}
-	}
-	public void actionListenerEliminarColor(int id) {
-		managerProducto.eliminarColor(id);
-		listaColor=managerProducto.findAllColor();
-		JSFUtil.crearMensajeInfo("Color eliminado");
-	}
-
-	public List<ProColor> getListaColor() {
-		return listaColor;
-	}
-
-	public void setListaColor(List<ProColor> listaColor) {
-		this.listaColor = listaColor;
-	}
-
-	public ProColor getColor() {
-		return color;
-	}
-
-	public void setColor(ProColor color) {
-		this.color = color;
-	}
-
-	public boolean isPanelColapsado_Color() {
-		return panelColapsado_Color;
-	}
-
-	public void setPanelColapsado_Color(boolean panelColapsado_Color) {
-		this.panelColapsado_Color = panelColapsado_Color;
-	}
-
-	public ProColor getColorSeleccionado() {
-		return colorSeleccionado;
-	}
-
-	public void setColorSeleccionado(ProColor colorSeleccionado) {
-		this.colorSeleccionado = colorSeleccionado;
-	}
 	
 
 }
