@@ -6,6 +6,7 @@ import javax.inject.Named;
 
 import katana.controller.JSFUtil;
 import katana.model.entities.ProColor;
+import katana.model.entities.ProTalla;
 import katana.model.entities.ProTipoProducto;
 import katana.model.manager.ManagerProducto;
 
@@ -20,12 +21,16 @@ public class BeanProducto implements Serializable{
 	private ManagerProducto managerProducto;
 	private List<ProTipoProducto> listaTipoProducto;
 	private List<ProColor> listaColor;
+	private List<ProTalla> listaTalla;
 	private ProTipoProducto tipo_producto;
 	private ProColor color;
+	private ProTalla talla;
 	private boolean panelColapsado;
 	private boolean panelColapsado_Color;
+	private boolean panelColapsado_Talla;
 	private ProTipoProducto tipo_productoSeleccionado;
 	private ProColor colorSeleccionado;
+	private ProTalla tallaSeleccionada;
 	@PostConstruct
 	public void inicializar() 
 	{
@@ -33,8 +38,10 @@ public class BeanProducto implements Serializable{
 	    listaColor=managerProducto.findAllColor();
 	    tipo_producto=new ProTipoProducto();
 	    color=new ProColor();
+	    talla=new ProTalla();
 	    panelColapsado=true;
 	    panelColapsado_Color=true;
+	    panelColapsado_Talla=true;
 	}
 	
 	/*BEAN PARA pro_tipo_producto*/
@@ -162,8 +169,6 @@ public class BeanProducto implements Serializable{
 	public void setColorSeleccionado(ProColor colorSeleccionado) {
 		this.colorSeleccionado = colorSeleccionado;
 	}
-	
-	
 	
 
 }

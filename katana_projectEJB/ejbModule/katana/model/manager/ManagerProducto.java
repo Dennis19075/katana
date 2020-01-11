@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import katana.model.entities.ProColor;
+import katana.model.entities.ProTalla;
 import katana.model.entities.ProTipoProducto;
 
 
@@ -86,5 +87,6 @@ public class ManagerProducto {
     	em.merge(e);
     	
     }
-
+    
+    
 }
