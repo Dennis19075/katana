@@ -32,19 +32,17 @@ public class ManagerUsuario {
         
     }
     
-    /**CRUD DE LA TALBLA usu_usuario*/
+    /**CRUD DE LA TABLA usu_usuario*/
     public List<UsuUsuario> findAllUsuarios(){
     	String consulta="select o from UsuUsuario o";
     	Query q=em.createQuery(consulta, UsuUsuario.class);
     	return q.getResultList();
     }
     
-    public UsuUsuario findUsuarioByCorreo(String correo) {
-    	return em.find(UsuUsuario.class, correo);
+    public UsuUsuario findUsuarioById(int id) {
+    	return em.find(UsuUsuario.class, id);
     }
     public void insertarUsuario(UsuUsuario usuario) throws Exception {
-    	if(findUsuarioByCorreo(usuario.getCorreo())!=null)
-    		throw new Exception("Ya existe el correo ingresado");
     	UsuUsuario aux = new UsuUsuario();
     	aux.setNombre(usuario.getNombre());
     	aux.setApellido(usuario.getApellido());
@@ -52,57 +50,20 @@ public class ManagerUsuario {
     	aux.setPassword(usuario.getPassword());
         em.persist(aux);
     }
-    public void eliminarUsuario(String correo) {
-    	UsuUsuario usuario=findUsuarioByCorreo(correo);
+    public void eliminarUsuario(int id) {
+    	UsuUsuario usuario=findUsuarioById(id);
     	if(usuario!=null)
     		em.remove(usuario);
     }
     public void actualizarUsuario(UsuUsuario usuario) throws Exception {
-    	UsuUsuario e=findUsuarioByCorreo(usuario.getCorreo());
+    	UsuUsuario e=findUsuarioById(usuario.getIdUsuario());
     	if(e==null)
     		throw new Exception("No existe el usuario con este correo");
     	e.setApellido(usuario.getApellido());
-    	/*el correo no se si tambien se puede actualizar o no*/
     	e.setNombre(usuario.getNombre());
+    	e.setCorreo(usuario.getCorreo());
     	e.setPassword(usuario.getPassword());
     	em.merge(e);
-    	
     }
-    
-    
-    /**CRUD DE LA TALBLA usu_usuario_rol*/
-    public List<UsuUsuarioRol> findAllUsuariosRol(){
-    	String consulta="SELECT u FROM UsuUsuarioRol u";
-    	Query q=em.createQuery(consulta, UsuUsuarioRol.class);
-    	return q.getResultList();
-    }
-    
-    public UsuUsuarioRol findUsuarioRolById(int id) {
-    	return em.find(UsuUsuarioRol.class, id);
-    }
-    /*El metodo de insertar se ocupa dentro del metodo de insertarUsuario
-     * los demas metodos se van a poder editar en su propia vista*/
-    public void insertarUsuarioRol(UsuUsuario usuario, int id) throws Exception {
-    	UsuUsuarioRol aux=new UsuUsuarioRol();
-    	UsuRol rolAux = new UsuRol();
-    	aux.setUsuUsuario(usuario);
-    	rolAux.setIdRol(id); //aqui le cambio segun de que pagina venga los privilegios
-    	aux.setUsuRol(rolAux); //aqui ya guarda el rol segun lo que yo puse
-        em.persist(aux);
-    }
-    public void eliminarUsuarioRol(UsuUsuarioRol usuarioRol) {
-    	UsuUsuarioRol aux =findUsuarioRolById(usuarioRol.getIdUsuarioRol());
-    	if(aux!=null)
-    		em.remove(aux);
-    }
-    public void actualizarUsuarioRol(UsuUsuarioRol usuarioRol) throws Exception {
-    	UsuUsuarioRol e=findUsuarioRolById(usuarioRol.getIdUsuarioRol());
-    	if(e==null)
-    		throw new Exception("No existe el usuarioRol especificado.");
-    	e.setUsuUsuario(usuarioRol.getUsuUsuario());
-    	e.setUsuRol(usuarioRol.getUsuRol());
-    	em.merge(e);
-    	
-    }
-    
+   
 }

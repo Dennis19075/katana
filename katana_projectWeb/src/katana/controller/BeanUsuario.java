@@ -5,8 +5,12 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 import katana.controller.JSFUtil;
+import katana.model.entities.UsuRol;
 import katana.model.entities.UsuUsuario;
+import katana.model.entities.UsuUsuarioRol;
+import katana.model.manager.ManagerRol;
 import katana.model.manager.ManagerUsuario;
+import katana.model.manager.ManagerUsuarioRol;
 
 import java.io.Serializable;
 import java.util.List;
@@ -17,10 +21,13 @@ public class BeanUsuario implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@EJB
 	private ManagerUsuario managerUsuario;
+	private ManagerRol managerRol;
+	private ManagerUsuarioRol managerUsuarioRol;
 
 	private List<UsuUsuario> listaUsuario;
 
 	private UsuUsuario usuario;
+	private UsuRol rol;
 
 	private boolean panelColapsado_usuario;
 
@@ -30,6 +37,7 @@ public class BeanUsuario implements Serializable{
 	{
 	    listaUsuario=managerUsuario.findAllUsuarios();
 	    usuario=new UsuUsuario();
+	    rol = new UsuRol();
 	    panelColapsado_usuario=true;
 	}	
 	
@@ -41,10 +49,12 @@ public class BeanUsuario implements Serializable{
 	public void actionListenerInsertarUsuario() {
 		try {
 			managerUsuario.insertarUsuario(usuario);
-			managerUsuario.insertarUsuarioRol(usuario, 5); //aqui le mando desde el xhtml el id por defecto
+			rol = managerRol.findRolById(5);
+			managerUsuarioRol.insertarUsuarioRol(usuario,rol); 
+			
 			listaUsuario=managerUsuario.findAllUsuarios();
 			usuario = new UsuUsuario();
-			JSFUtil.crearMensajeInfo("Se ha insertado el usuario.");
+			JSFUtil.crearMensajeInfo("Registro con exito.");
 		} catch (Exception e) {
 			JSFUtil.crearMensajeError(e.getMessage());
 			e.printStackTrace();
@@ -63,8 +73,8 @@ public class BeanUsuario implements Serializable{
 			e.printStackTrace();
 		}
 	}
-	public void actionListenerEliminarUsuario(String correo) {
-		managerUsuario.eliminarUsuario(correo);
+	public void actionListenerEliminarUsuario(int id) {
+		managerUsuario.eliminarUsuario(id);
 		listaUsuario=managerUsuario.findAllUsuarios();
 		JSFUtil.crearMensajeInfo("Usuario eliminado.");
 	}
