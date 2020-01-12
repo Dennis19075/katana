@@ -65,5 +65,32 @@ public class ManagerUsuario {
     }
     
     
-   
+    /**CRUD DE LA TABLA usu_usuario_rol*/
+    public List<UsuUsuarioRol> findAllUsuariosRol(){
+    	String consulta="SELECT u FROM UsuUsuarioRol u";
+    	Query q=em.createQuery(consulta, UsuUsuarioRol.class);
+    	return q.getResultList();
+    }
+    
+    public UsuUsuarioRol findUsuarioRolById(int id) {
+    	return em.find(UsuUsuarioRol.class, id);
+    }
+    public void insertarUsuarioRol(UsuUsuarioRol usuarioRol) throws Exception {
+    	UsuUsuarioRol aux = new UsuUsuarioRol();
+    	aux.setUsuUsuario(usuarioRol.getUsuUsuario());
+    	aux.setUsuRol(usuarioRol.getUsuRol());
+        em.persist(aux);
+    }
+    public void eliminarUsuarioRol(int id) {
+    	UsuUsuarioRol usuario=findUsuarioRolById(id);
+    	if(usuario!=null)
+    		em.remove(usuario);
+    }
+    public void actualizarUsuarioRolSeleccionado(UsuUsuarioRol usuarioRol) throws Exception {
+    	UsuUsuarioRol e=findUsuarioRolById(usuarioRol.getIdUsuarioRol());
+    	//e.setUsuUsuario(usuarioRol.getUsuUsuario()); no modifique el usuario solo el rol
+    	e.setUsuRol(usuarioRol.getUsuRol());
+    	em.merge(e);
+    }
+    
 }
