@@ -20,7 +20,7 @@
 	<br />
 	<h:form id="form2">
 		<p:panel header="Datos del Usuario y Rol">
-			<p:dataTable value="#{beanUsuarioRol.listaUsuarioRol}" reflow="true"
+			<p:dataTable value="#{beanUsuario.listaUsuarioRol}" reflow="true"
 				var="rol" paginator="true" rows="3">
 				<p:column headerText="ID" filterBy="#{rol.idUsuarioRol}"
 					filterMatchMode="contains" priority="1">
@@ -30,7 +30,7 @@
 					filterMatchMode="contains" priority="1">
 					<h:outputText value="#{rol.usuUsuario.nombre}" />
 				</p:column>
-				<p:column headerText="Apellidos Usuario" filterBy="#{rol.usuUsuario.nombre}"
+				<p:column headerText="Apellidos Usuario" filterBy="#{rol.usuUsuario.apellido}"
 					filterMatchMode="contains" priority="1">
 					<h:outputText value="#{rol.usuUsuario.apellido}" />
 				</p:column>
@@ -54,7 +54,7 @@
 				<p:autoUpdate></p:autoUpdate>
 			</p:growl>
 			<h:outputText value="ID: " />
-			<h:outputText value="#{beanUsuarioRol.usuarioRol.usuRol.nombre}" />
+			<h:outputText value="#{beanUsuario.usuario.nombre}" />
 			<p:panelGrid columns="2">
 				
 			    <!-- <p:outputLabel value="Rol" />

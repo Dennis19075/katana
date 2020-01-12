@@ -57,13 +57,13 @@ public class ManagerUsuario {
     }
     public void actualizarUsuario(UsuUsuario usuario) throws Exception {
     	UsuUsuario e=findUsuarioById(usuario.getIdUsuario());
-    	if(e==null)
-    		throw new Exception("No existe el usuario con este correo");
     	e.setApellido(usuario.getApellido());
     	e.setNombre(usuario.getNombre());
     	e.setCorreo(usuario.getCorreo());
     	e.setPassword(usuario.getPassword());
     	em.merge(e);
     }
+    
+    
    
 }
