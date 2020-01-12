@@ -22,7 +22,7 @@ public class BeanEstado implements Serializable{
 
 	private PedEstado estado;
 
-	private boolean panelColapsado_Estado;
+	private boolean panelColapsado_estado;
 
 	private PedEstado estadoSeleccionada;
 	@PostConstruct
@@ -30,13 +30,13 @@ public class BeanEstado implements Serializable{
 	{
 	    listaEstado=managerEstado.findAllEstado();
 	    estado=new PedEstado();
-	    panelColapsado_Estado=true;
+	    panelColapsado_estado=true;
 	}	
 	
 /*BEAN PARA pro_talla*/
 	
-	public void actionListenerColapsarPanel_Estado() {
-		panelColapsado_Estado=!panelColapsado_Estado;
+	public void actionListenerColapsarPanel_estado() {
+		panelColapsado_estado=!panelColapsado_estado;
 	}
 	public void actionListenerInsertarEstado() {
 		try {
@@ -84,12 +84,14 @@ public class BeanEstado implements Serializable{
 		this.estado = estado;
 	}
 
-	public boolean isPanelColapsado_Estado() {
-		return panelColapsado_Estado;
+
+
+	public boolean isPanelColapsado_estado() {
+		return panelColapsado_estado;
 	}
 
-	public void setPanelColapsado_Estado(boolean panelColapsado_Estado) {
-		this.panelColapsado_Estado = panelColapsado_Estado;
+	public void setPanelColapsado_estado(boolean panelColapsado_estado) {
+		this.panelColapsado_estado = panelColapsado_estado;
 	}
 
 	public PedEstado getEstadoSeleccionada() {
