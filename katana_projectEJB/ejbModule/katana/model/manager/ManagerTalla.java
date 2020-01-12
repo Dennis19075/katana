@@ -55,7 +55,7 @@ public class ManagerTalla {
     public void actualizarTalla(ProTalla talla) throws Exception {
     	ProTalla e=findTallaById(talla.getIdTalla());
     	if(e==null)
-    		throw new Exception("No existe este color");
+    		throw new Exception("No existe esta talla");
     	e.setDescripcion(talla.getDescripcion());
     	em.merge(e);
     	

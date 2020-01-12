@@ -9,7 +9,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import katana.model.entities.PedEstado;
-import katana.model.entities.PedIva;
 
 
 /**
@@ -29,7 +28,9 @@ public class ManagerEstado {
         // TODO Auto-generated constructor stub
     }
     
-    /**CRUD DE LA TALBLA pro_estado*/
+
+    
+    /**CRUD DE LA TALBLA pro_talla*/
     public List<PedEstado> findAllEstado(){
     	String consulta="SELECT p FROM PedEstado p";
     	Query q=em.createQuery(consulta, PedEstado.class);
@@ -40,27 +41,24 @@ public class ManagerEstado {
     	return em.find(PedEstado.class, id);
     }
     public void insertarEstado(PedEstado estado) throws Exception {
-        PedEstado est=new PedEstado();
-        est.setNombre(estado.getNombre());
-        est.setDescripcion(est.getDescripcion());
-        
-    	em.persist(est);
+    	PedEstado aux=new PedEstado();
+    	aux.setNombre(estado.getNombre());
+    	aux.setDescripcion(estado.getDescripcion());
+        em.persist(aux);
     }
     public void eliminarEstado(int id) {
-    	PedEstado est=findEstadoById(id);
-    	if(est!=null)
-    		em.remove(est);
+    	PedEstado estado=findEstadoById(id);
+    	if(estado!=null)
+    		em.remove(estado);
     }
     public void actualizarEstado(PedEstado estado) throws Exception {
-    	PedEstado est=findEstadoById(estado.getIdEstado());
-    	if(est==null)
-    		throw new Exception("No existe ese estado");
-    	est.setNombre(estado.getNombre());
-        est.setDescripcion(est.getDescripcion());
-    	em.merge(est);
+    	PedEstado e=findEstadoById(estado.getIdEstado());
+    	if(e==null)
+    		throw new Exception("No existe este estado");
+    	e.setNombre(estado.getNombre());
+    	e.setDescripcion(estado.getDescripcion());
+    	em.merge(e);
     	
     }
-    
-    
-    
+
 }

@@ -7,8 +7,6 @@ import javax.inject.Named;
 import katana.controller.JSFUtil;
 import katana.model.entities.PedEstado;
 import katana.model.manager.ManagerEstado;
-import katana.model.manager.ManagerPedido;
-import katana.model.manager.ManagerProducto;
 
 import java.io.Serializable;
 import java.util.List;
@@ -19,43 +17,46 @@ public class BeanEstado implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@EJB
 	private ManagerEstado managerEstado;
+
 	private List<PedEstado> listaEstado;
+
 	private PedEstado estado;
-	private boolean panelColapsado_Estado;
-	private PedEstado estadoSeleccionado;
+
+	private boolean panelColapsado_estado;
+
+	private PedEstado estadoSeleccionada;
 	@PostConstruct
 	public void inicializar() 
 	{
-		listaEstado= managerEstado.findAllEstado();
-	    estado =new PedEstado();
-	    panelColapsado_Estado=true;
-	    
-	}
+	    listaEstado=managerEstado.findAllEstado();
+	    estado=new PedEstado();
+	    panelColapsado_estado=true;
+	}	
 	
-	/*BEAN PARA ped_estado*/
+/*BEAN PARA pro_talla*/
 	
-	public void actionListenerColapsarPanel() {
-		panelColapsado_Estado=!panelColapsado_Estado;
+	public void actionListenerColapsarPanel_estado() {
+		panelColapsado_estado=!panelColapsado_estado;
 	}
-	public void actionListenerInsertarTipoProducto() {
+	public void actionListenerInsertarEstado() {
 		try {
 			managerEstado.insertarEstado(estado);
 			listaEstado=managerEstado.findAllEstado();
-			estado=new PedEstado();
-			JSFUtil.crearMensajeInfo("Se ha insertado un estado");
+			estado = new PedEstado();
+			JSFUtil.crearMensajeInfo("Se ha insertado el estado.");
 		} catch (Exception e) {
 			JSFUtil.crearMensajeError(e.getMessage());
 			e.printStackTrace();
 		}
 	}
 	public void actionListenerSeleccionarEstado(PedEstado estado) {
-		estadoSeleccionado=estado;
+		estadoSeleccionada=estado;
 	}
-	public void actionListenerActualizarTipoProducto() {
+	public void actionListenerActualizarEstado() {
 		try {
-			managerEstado.actualizarEstado(estadoSeleccionado);
+			managerEstado.actualizarEstado(estadoSeleccionada);
 			listaEstado=managerEstado.findAllEstado();
-			JSFUtil.crearMensajeInfo("Datos actualizados");
+			JSFUtil.crearMensajeInfo("Datos actualizados.");
 		} catch (Exception e) {
 			JSFUtil.crearMensajeError(e.getMessage());
 			e.printStackTrace();
@@ -64,7 +65,43 @@ public class BeanEstado implements Serializable{
 	public void actionListenerEliminarEstado(int id) {
 		managerEstado.eliminarEstado(id);
 		listaEstado=managerEstado.findAllEstado();
-		JSFUtil.crearMensajeInfo("Estado eliminado");
+		JSFUtil.crearMensajeInfo("Estado eliminada.");
 	}
+
+	public List<PedEstado> getListaEstado() {
+		return listaEstado;
+	}
+
+	public void setListaEstado(List<PedEstado> listaEstado) {
+		this.listaEstado = listaEstado;
+	}
+
+	public PedEstado getEstado() {
+		return estado;
+	}
+
+	public void setEstado(PedEstado estado) {
+		this.estado = estado;
+	}
+
+
+
+	public boolean isPanelColapsado_estado() {
+		return panelColapsado_estado;
+	}
+
+	public void setPanelColapsado_estado(boolean panelColapsado_estado) {
+		this.panelColapsado_estado = panelColapsado_estado;
+	}
+
+	public PedEstado getEstadoSeleccionada() {
+		return estadoSeleccionada;
+	}
+
+	public void setEstadoSeleccionada(PedEstado estadoSeleccionada) {
+		this.estadoSeleccionada = estadoSeleccionada;
+	}
+
 	
+
 }
