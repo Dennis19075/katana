@@ -55,6 +55,7 @@ public class BeanRol implements Serializable{
 			listaRol=managerRol.findAllROl();
 			JSFUtil.crearMensajeInfo("Datos actualizados");
 		} catch (Exception e) {
+			listaRol=managerRol.findAllROl();
 			JSFUtil.crearMensajeError(e.getMessage());
 			e.printStackTrace();
 		}

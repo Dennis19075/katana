@@ -39,11 +39,12 @@ public class ManagerRol {
     public UsuRol findRolById(int id) {
     	return em.find(UsuRol.class, id);
     }
+    
     public void insertarRol(UsuRol rol) throws Exception {
     	UsuRol save_rol=new UsuRol();
         save_rol.setNombre(rol.getNombre());
         save_rol.setDescripcion(rol.getDescripcion());
-        em.persist(rol);
+        em.persist(save_rol);
     }
     public void eliminarRol(int id) {
     	UsuRol rol=findRolById(id);

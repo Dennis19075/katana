@@ -21,6 +21,7 @@ public class BeanUsuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@EJB
 	private ManagerUsuario managerUsuario;
+	@EJB
 	private ManagerRol managerRol;
 	
 	/*USUARIO*/
@@ -46,9 +47,7 @@ public class BeanUsuario implements Serializable {
 		usuario = new UsuUsuario();
 		panelColapsado_usuario = true;
 		/*ROL*/
-		/*
-		 * listaRol = managerRol.findAllROl(); rol = new UsuRol();
-		 */
+		rol=new UsuRol();
 		/*USUARIO-ROL*/
 		listaUsuarioRol = managerUsuario.findAllUsuariosRol();
 		usuarioRol = new UsuUsuarioRol();
@@ -64,15 +63,16 @@ public class BeanUsuario implements Serializable {
 
 	public void actionListenerInsertarUsuario() {
 		try {
+			
 			managerUsuario.insertarUsuario(usuario);
-			
-			/*Aqui inserta en la tabla de relacion usuario - rol
-			 * Por defecto que se ponga Cliente final*/
-			 this.actionListenerInsertarUsuarioRol(5); 
-			/**/
-			
 			listaUsuario = managerUsuario.findAllUsuarios();
+			usuario=managerUsuario.findUsuarioById(managerUsuario.findIdUsuarioMayor());
+			/*El numero 2 es porque en mi caso */
+			rol=managerRol.findRolById(2);
+			managerUsuario.insertarUsuarioRol(rol, usuario);
+			listaUsuarioRol = managerUsuario.findAllUsuariosRol();
 			usuario = new UsuUsuario();
+			rol=new UsuRol();
 			JSFUtil.crearMensajeInfo("Registro con exito.");
 		} catch (Exception e) {
 			JSFUtil.crearMensajeError(e.getMessage());
@@ -90,6 +90,7 @@ public class BeanUsuario implements Serializable {
 			listaUsuario = managerUsuario.findAllUsuarios();
 			JSFUtil.crearMensajeInfo("Datos actualizados.");
 		} catch (Exception e) {
+			listaUsuario = managerUsuario.findAllUsuarios();
 			JSFUtil.crearMensajeError(e.getMessage());
 			e.printStackTrace();
 		}
@@ -133,14 +134,33 @@ public class BeanUsuario implements Serializable {
 		this.usuarioSeleccionado = usuarioSeleccionado;
 	}
 	
-	/* BEAN PARA usu_usuario_rol */
+	/* Para Registrar administradores */
+	public void actionListenerInsertarUsuarioAdministrador() {
+		try {
+			
+			managerUsuario.insertarUsuario(usuario);
+			listaUsuario = managerUsuario.findAllUsuarios();
+			usuario=managerUsuario.findUsuarioById(managerUsuario.findIdUsuarioMayor());
+			/*El numero 2 es porque en mi caso */
+			rol=managerRol.findRolById(3);
+			managerUsuario.insertarUsuarioRol(rol, usuario);
+			listaUsuarioRol = managerUsuario.findAllUsuariosRol();
+			usuario = new UsuUsuario();
+			rol=new UsuRol();
+			JSFUtil.crearMensajeInfo("Registro con exito.");
+		} catch (Exception e) {
+			JSFUtil.crearMensajeError(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+
 
 	/*
 	 * public void actionListenerColapsarPanel_usuariorol() {
 	 * panelColapsado_usuario_rol = !panelColapsado_usuario_rol; }
 	 */
 
-	public void actionListenerInsertarUsuarioRol(int id) {
+	/*public void actionListenerInsertarUsuarioRol(int id) {
 		try {
 			UsuRol auxRol = new UsuRol();
 			auxRol = managerRol.findRolById(id);
@@ -149,14 +169,14 @@ public class BeanUsuario implements Serializable {
 
 			auxUsuRol.setUsuUsuario(usuario);
 			auxUsuRol.setUsuRol(auxRol);
-			managerUsuario.insertarUsuarioRol(auxUsuRol);
+			//managerUsuario.insertarUsuarioRol(auxUsuRol);
 			listaUsuarioRol = managerUsuario.findAllUsuariosRol();
 			JSFUtil.crearMensajeInfo("Registro con exito.");
 		} catch (Exception e) {
 			JSFUtil.crearMensajeError(e.getMessage());
 			e.printStackTrace();
 		}
-	}
+	}*/
 	 
 
 	public void actionListenerSeleccionarUsuarioRol(UsuUsuarioRol usuarioRol) {
@@ -180,6 +200,7 @@ public class BeanUsuario implements Serializable {
 			rol = new UsuRol();
 			JSFUtil.crearMensajeInfo("Datos actualizados.");
 		} catch (Exception e) {
+			listaUsuarioRol = managerUsuario.findAllUsuariosRol();
 			JSFUtil.crearMensajeError(e.getMessage());
 			e.printStackTrace();
 		}

@@ -54,6 +54,7 @@ public class BeanIva implements Serializable{
 			listaIva=managerPedido.findAllIva();
 			JSFUtil.crearMensajeInfo("Datos actualizados");
 		} catch (Exception e) {
+			listaIva=managerPedido.findAllIva();
 			JSFUtil.crearMensajeError(e.getMessage());
 			e.printStackTrace();
 		}

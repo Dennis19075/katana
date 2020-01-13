@@ -58,6 +58,7 @@ public class BeanEstado implements Serializable{
 			listaEstado=managerEstado.findAllEstado();
 			JSFUtil.crearMensajeInfo("Datos actualizados.");
 		} catch (Exception e) {
+			listaEstado=managerEstado.findAllEstado();
 			JSFUtil.crearMensajeError(e.getMessage());
 			e.printStackTrace();
 		}

@@ -56,6 +56,7 @@ public class BeanEstilo implements Serializable{
 			listaEstilo=managerEstilo.findAllEstilo();
 			JSFUtil.crearMensajeInfo("Datos actualizados");
 		} catch (Exception e) {
+			listaEstilo=managerEstilo.findAllEstilo();
 			JSFUtil.crearMensajeError(e.getMessage());
 			e.printStackTrace();
 		}

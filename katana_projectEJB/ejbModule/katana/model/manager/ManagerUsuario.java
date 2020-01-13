@@ -6,6 +6,8 @@ import katana.model.entities.ProTalla;
 import katana.model.entities.UsuRol;
 import katana.model.entities.UsuUsuario;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.ejb.LocalBean;
@@ -42,6 +44,22 @@ public class ManagerUsuario {
     public UsuUsuario findUsuarioById(int id) {
     	return em.find(UsuUsuario.class, id);
     }
+    
+    public int findIdUsuarioMayor() 
+    {
+    	int cont=0;
+    	List <UsuUsuario>lista;
+    	lista=findAllUsuarios();
+    	for (int i = 0; i < lista.size(); i++) {
+			if(cont<lista.get(i).getIdUsuario()) 
+			{
+				cont=lista.get(i).getIdUsuario();
+			}
+		}
+    	
+    	return cont;
+    }
+    
     public void insertarUsuario(UsuUsuario usuario) throws Exception {
     	UsuUsuario aux = new UsuUsuario();
     	aux.setNombre(usuario.getNombre());
@@ -67,7 +85,7 @@ public class ManagerUsuario {
     
     /**CRUD DE LA TABLA usu_usuario_rol*/
     public List<UsuUsuarioRol> findAllUsuariosRol(){
-    	String consulta="SELECT u FROM UsuUsuarioRol u";
+    	String consulta="select u from UsuUsuarioRol u";
     	Query q=em.createQuery(consulta, UsuUsuarioRol.class);
     	return q.getResultList();
     }
@@ -75,10 +93,10 @@ public class ManagerUsuario {
     public UsuUsuarioRol findUsuarioRolById(int id) {
     	return em.find(UsuUsuarioRol.class, id);
     }
-    public void insertarUsuarioRol(UsuUsuarioRol usuarioRol) throws Exception {
+    public void insertarUsuarioRol(UsuRol Rol, UsuUsuario usuario) throws Exception {
     	UsuUsuarioRol aux = new UsuUsuarioRol();
-    	aux.setUsuUsuario(usuarioRol.getUsuUsuario());
-    	aux.setUsuRol(usuarioRol.getUsuRol());
+    	aux.setUsuUsuario(usuario);
+    	aux.setUsuRol(Rol);
         em.persist(aux);
     }
     public void eliminarUsuarioRol(int id) {

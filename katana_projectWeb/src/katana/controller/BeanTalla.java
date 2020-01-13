@@ -61,6 +61,7 @@ public class BeanTalla implements Serializable{
 			listaTalla=managerTalla.findAllTalla();
 			JSFUtil.crearMensajeInfo("Datos actualizados.");
 		} catch (Exception e) {
+			listaTalla=managerTalla.findAllTalla();
 			JSFUtil.crearMensajeError(e.getMessage());
 			e.printStackTrace();
 		}

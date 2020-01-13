@@ -56,6 +56,7 @@ public class BeanProducto implements Serializable{
 			listaTipoProducto=managerProducto.findAllTipoProducto();
 			JSFUtil.crearMensajeInfo("Datos actualizados");
 		} catch (Exception e) {
+			listaTipoProducto=managerProducto.findAllTipoProducto();
 			JSFUtil.crearMensajeError(e.getMessage());
 			e.printStackTrace();
 		}
