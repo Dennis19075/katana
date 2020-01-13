@@ -28,7 +28,8 @@
 			</f:facet>
 			<p:panelGrid columns="2">
 				<h:outputText value="Precio" />
-				<p:inputText value="#{beanCamiseta.camiseta.precio}"></p:inputText>
+				<p:spinner value="#{beanCamiseta.camiseta.precio}" stepFactor="0.01"
+				min="0" size="10"></p:spinner>
 				<h:outputText value="Imagen" />
 				<p:inputText value="#{beanCamiseta.camiseta.imagen}"></p:inputText>
 				<h:outputText value="Segunda Imagen" />
@@ -91,8 +92,8 @@
 			<p:panelGrid columns="2">
 				
 					<h:outputText value="Precio" />
-					<p:inputText
-					value="#{beanCamiseta.camisetaSeleccionado.precio}"></p:inputText>
+					<p:spinner value="#{beanCamiseta.camisetaSeleccionado.precio}"
+					stepFactor="0.01"  min="0" size="10"></p:spinner>
 					<h:outputText value="Imagen" />
 					<p:inputText
 					value="#{beanCamiseta.camisetaSeleccionado.imagen}"></p:inputText>

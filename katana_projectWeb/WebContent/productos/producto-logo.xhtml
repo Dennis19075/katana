@@ -31,7 +31,8 @@
 				<h:outputText value="Imagen" />
 				<p:inputText value="#{beanLogo.logo.imagen}"></p:inputText>
 				<h:outputText value="Precio" />
-				<p:inputText value="#{beanLogo.logo.precio}"></p:inputText>
+				<p:spinner value="#{beanLogo.logo.precio}" stepFactor="0.01" 
+				min="0" size="10"></p:spinner>
 				<p:commandButton value="Insertar" icon="fa fa-save"
 					update="@form, :form2"
 					actionListener="#{beanLogo.actionListenerInsertarLogo()}"></p:commandButton>
@@ -81,8 +82,8 @@
 				<p:inputText
 					value="#{beanLogo.logoSeleccionado.imagen}"></p:inputText>
 					<h:outputText value="Precio" />
-					<p:inputText
-					value="#{beanLogo.logoSeleccionado.precio}"></p:inputText>
+					<p:spinner value="#{beanLogo.logoSeleccionado.precio}" stepFactor="0.01" 
+					min="0" size="10"></p:spinner>
 			</p:panelGrid>
 			<p:commandButton value="Actualizar" icon="fa fa-save"
 				update="@form, :form2"
