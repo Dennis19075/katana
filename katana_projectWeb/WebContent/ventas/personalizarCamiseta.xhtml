@@ -1,222 +1,136 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
 <h:head>
-    <title>Katana</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="../images/icons/favicon.png" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../fonts/themify/themify-icons.css" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../fonts/Linearicons-Free-v1.0.0/icon-font.min.css" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../fonts/elegant-font/html-css/style.css" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../vendor/animsition/css/animsition.min.css" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../vendor/slick/slick.css" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../vendor/noui/nouislider.min.css" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="../css/util.css" />
-    <link rel="stylesheet" type="text/css" href="../css/main.css" />
-    <!--===============================================================================================-->
+	<title>Facelet Title</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	</link>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+		type="text/css">
+	</link>
+	<link rel="stylesheet" href="../resource/css/estilosRegistro.css">
+	</link>
+
+	<!-- Theme CSS -->
+	<link href="../resource/css/freelancer.min.css" rel="stylesheet">
+	</link>
 
 
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500" />
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="assets/css/form-elements.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../css/util.css" />
+	<link rel="stylesheet" type="text/css" href="../css/main.css" />
+	<!--===============================================================================================-->
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-    <!-- Favicon and touch icons -->
-    <link rel="shortcut icon" href="assets/ico/favicon.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png" />
 </h:head>
-
-<body class="animsition">
-
-
-    <!--===============================================================================================-->
-    <script type="text/javascript" src="../vendor/jquery/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-    <script type="text/javascript" src="../vendor/animsition/js/animsition.min.js"></script>
-    <!--===============================================================================================-->
-    <script type="text/javascript" src="../vendor/bootstrap/js/popper.js"></script>
-    <script type="text/javascript" src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--===============================================================================================-->
-    <script type="text/javascript" src="../vendor/select2/select2.min.js"></script>
-    <script type="text/javascript">
-        $(".selection-1").select2({
-            minimumResultsForSearch: 20,
-            dropdownParent: $('#dropDownSelect1')
-        });
-
-        $(".selection-2").select2({
-            minimumResultsForSearch: 20,
-            dropdownParent: $('#dropDownSelect2')
-        });
-    </script>
-    <!--===============================================================================================-->
-    <script src="../js/main.js"></script>
-
-    <!-- Header -->
-    <header class="header1">
-        <!-- Header desktop -->
-        <div class="container-menu-header">
-            <div class="wrap_header">
-                <!-- Logo -->
-                <a href="../landingPage.xhtml" class="logo">
-                    <img style="width: 200px;height: 600px !important;" src="../images/katanaimg/katanalogo.png"
-                        alt="IMG-LOGO" />
-                </a>
-
-                <!-- Menu -->
-                <div class="wrap_menu">
-                    <nav class="menu">
-                        <ul class="main_menu">
-                            <li>
-                                <a href="product.html">Chicas</a>
-                            </li>
-
-                            <li class="sale-noti">
-                                <a href="product.html">Chicos</a>
-                            </li>
-
-                            <li>
-                                <a href="cart.html">Unisex</a>
-                            </li>
-                            <li>
-                                <a href="index.html">Camisetas</a>
-                                <ul class="sub_menu">
-                                    <li><a href="#">Bandas Musicales</a></li>
-                                    <li><a href="#">Series</a></li>
-                                    <li><a href="#">Peliculas</a></li>
-                                    <li><a href="#">Personalizada</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="about.html">Quienes somos</a>
-                            </li>
-
-                            <li>
-                                <a href="contact.html">Contactos</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <!-- Header Icon -->
-                <div class="header-icons">
-                    <a href="#" class="header-wrapicon1 dis-block">
-                        <img src="../images/icons/icon-header-01.png" class="header-icon1" alt="ICON" />
-                    </a>
-
-                    <span class="linedivide1"></span>
-
-                    <div class="header-wrapicon2">
-                        <img src="../images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown"
-                            alt="ICON" />
-                        <span class="header-icons-noti">3</span>
-
-                        <!-- Header cart noti -->
-                        <div class="header-cart header-dropdown">
-                            <ul class="header-cart-wrapitem">
-                                <li class="header-cart-item">
-                                    <div class="header-cart-item-img">
-                                        <img src="../images/item-cart-01.jpg" alt="IMG" />
-                                    </div>
-
-                                    <div class="header-cart-item-txt">
-                                        <a href="#" class="header-cart-item-name">
-                                            White Shirt With Pleat Detail Back
-                                        </a>
-
-                                        <span class="header-cart-item-info">
-                                            1 x $19.00
-                                        </span>
-                                    </div>
-                                </li>
-
-                                <li class="header-cart-item">
-                                    <div class="header-cart-item-img">
-                                        <img src="../images/item-cart-02.jpg" alt="IMG" />
-                                    </div>
-
-                                    <div class="header-cart-item-txt">
-                                        <a href="#" class="header-cart-item-name">
-                                            Converse All Star Hi Black Canvas
-                                        </a>
-
-                                        <span class="header-cart-item-info">
-                                            1 x $39.00
-                                        </span>
-                                    </div>
-                                </li>
-
-                                <li class="header-cart-item">
-                                    <div class="header-cart-item-img">
-                                        <img src="../images/item-cart-03.jpg" alt="IMG" />
-                                    </div>
-
-                                    <div class="header-cart-item-txt">
-                                        <a href="#" class="header-cart-item-name">
-                                            Nixon Porter Leather Watch In Tan
-                                        </a>
-
-                                        <span class="header-cart-item-info">
-                                            1 x $17.00
-                                        </span>
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <div class="header-cart-total">
-                                Total: $75.00
-                            </div>
-
-                            <div class="header-cart-buttons">
+<h:body>
 
 
-                                <div class="header-cart-wrapbtn">
-                                    <!-- Button -->
-                                    <a href="./index.xhtml" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-                                        Ver carrito
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!--===============================================================================================-->
+	<!-- Header -->
+	<header class="header1">
+		<!-- Header desktop -->
+		<div class="container-menu-header">
+			<div class="wrap_header">
+				<!-- Logo -->
+				<a href="../landingPage.xhtml" class="logo"> <img style="width: 200px; height: 600px !important;"
+						src="../images/katanaimg/katanalogo.png" alt="IMG-LOGO" />
+				</a>
+
+				<!-- Menu -->
+				<div class="wrap_menu">
+					<nav class="menu">
+						<ul class="main_menu">
+							<li><a href="product.html">Chicas</a></li>
+
+							<li class="sale-noti"><a href="product.html">Chicos</a></li>
+
+							<li><a href="cart.html">Unisex</a></li>
+							<li><a href="index.html">Camisetas</a>
+								<ul class="sub_menu">
+									<li><a href="#">Bandas Musicales</a></li>
+									<li><a href="#">Series</a></li>
+									<li><a href="#">Peliculas</a></li>
+									<li><a href="#">Personalizada</a></li>
+								</ul>
+							</li>
+
+							<li><a href="about.html">Quienes somos</a></li>
+
+							<li><a href="contact.html">Contactos</a></li>
+						</ul>
+					</nav>
+				</div>
+
+				<!-- Header Icon -->
+				<div class="header-icons">
+					<a href="#" class="header-wrapicon1 dis-block"> <img src="../images/icons/icon-header-01.png"
+							class="header-icon1" alt="ICON" />
+					</a> <span class="linedivide1"></span>
+
+					<div class="header-wrapicon2">
+						<img src="../images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown"
+							alt="ICON" /> <span class="header-icons-noti">3</span>
+
+						<!-- Header cart noti -->
+						<div class="header-cart header-dropdown">
+							<ul class="header-cart-wrapitem">
+								<li class="header-cart-item">
+									<div class="header-cart-item-img">
+										<img src="../images/item-cart-01.jpg" alt="IMG" />
+									</div>
+
+									<div class="header-cart-item-txt">
+										<a href="#" class="header-cart-item-name"> White Shirt With
+											Pleat Detail Back </a> <span class="header-cart-item-info">
+											1 x $19.00 </span>
+									</div>
+								</li>
+
+								<li class="header-cart-item">
+									<div class="header-cart-item-img">
+										<img src="../images/item-cart-02.jpg" alt="IMG" />
+									</div>
+
+									<div class="header-cart-item-txt">
+										<a href="#" class="header-cart-item-name"> Converse All
+											Star Hi Black Canvas </a> <span class="header-cart-item-info">
+											1 x $39.00 </span>
+									</div>
+								</li>
+
+								<li class="header-cart-item">
+									<div class="header-cart-item-img">
+										<img src="../images/item-cart-03.jpg" alt="IMG" />
+									</div>
+
+									<div class="header-cart-item-txt">
+										<a href="#" class="header-cart-item-name"> Nixon Porter
+											Leather Watch In Tan </a> <span class="header-cart-item-info">
+											1 x $17.00 </span>
+									</div>
+								</li>
+							</ul>
+
+							<div class="header-cart-total">Total: $75.00</div>
+
+							<div class="header-cart-buttons">
+
+
+								<div class="header-cart-wrapbtn">
+									<!-- Button -->
+									<a href="./index.xhtml" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										Ver carrito </a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!--===============================================================================================-->
 
 
 
@@ -224,183 +138,89 @@
 
 
 
+	<div class="container">
 
-    <!-- Top content -->
-    <div class="top-content">
+		<br /> <br /> <br /> <br /> <br /> <br /> <br />
+		<h2 style="text-align: center">Personaliza tu camiseta</h2>
+		<!-- multistep form -->
+		<h:form style="margin-top:30px" id="msform">
 
-        <div class="inner-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2 text">
-                        <br />
-                        <br />
-                        <br />
-                        <h1><strong>Personaliza</strong> tu camiseta en 3 sencillos pasos.</h1>
+			<!-- progressbar -->
+			<ul id="progressbar">
+				<li class="active">Paso Nº1</li>
+				<li>Paso Nº2</li>
+				<li>Paso Nº3</li>
+			</ul>
+			<!-- fieldsets -->
+			<fieldset>
+				<style type="text/css">
+					.value {
+						font-weight: bold;
+					}
+				</style>
 
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 col-sm-offset-3 form-box">
+				<p:dataGrid var="color" value="#{beanColor.listaColor}" columns="3" layout="grid" id="cars">
 
-                        <form role="form" action="" method="post" class="registration-form">
+					<f:facet name="header">
+						Escoge el color de camiseta:
+					</f:facet>
 
-                            <fieldset>
-                                <div class="form-top">
-                                    <div class="form-top-left">
-                                        <h3>Paso 1 / 3</h3>
-                                        <p>Elige el color de tu camiseta: </p>
-                                    </div>
-                                    <div class="form-top-right">
-                                        <i class="fa fa-user"></i>
-                                    </div>
-                                </div>
-                                <div class="form-bottom">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-first-name">First name</label>
-                                        <input type="text" name="form-first-name" placeholder="First name..."
-                                            class="form-first-name form-control" id="form-first-name" />
+					<p:panel header="#{color.nombre}" style="text-align:center">
+						<h:panelGrid columns="1" style="width:100%">
+							<!-- <p:graphicImage name="demo/images/car/#{car.brand}.gif" /> -->
+							<img style="height: 150px;" src="../images/item-cart-01.jpg" />
+						</h:panelGrid>
+						<br />
+						<p:selectBooleanCheckbox value="#{selectBooleanView.value1}" />
+					</p:panel>
 
-                                        <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-                                            <img src="../images/item-cart-03.jpg" alt="IMG-PRODUCT" />
-
-                                            <div class="block2-overlay trans-0-4">
-                                                <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-                                                    <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                                                    <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-                                                </a>
-
-                                                <div class="block2-btn-addcart w-size1 trans-0-4">
-                                                    <!-- Button -->
-                                                    <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                                        Add to Cart
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <img src="../images/item-cart-03.jpg" alt="IMG-PRODUCT" />
-
-                                            <div class="block2-overlay trans-0-4">
-                                                <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-                                                    <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                                                    <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-                                                </a>
-
-                                                <div class="block2-btn-addcart w-size1 trans-0-4">
-                                                    <!-- Button -->
-                                                    <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                                        Add to Cart
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <img src="../images/item-cart-03.jpg" alt="IMG-PRODUCT" />
-
-                                            <div class="block2-overlay trans-0-4">
-                                                <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-                                                    <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                                                    <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-                                                </a>
-
-                                                <div class="block2-btn-addcart w-size1 trans-0-4">
-                                                    <!-- Button -->
-                                                    <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                                        Add to Cart
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <button type="button" class="btn btn-next">Siguiente</button>
-                                </div>
-                            </fieldset>
-
-                            <fieldset>
-                                <div class="form-top">
-                                    <div class="form-top-left">
-                                        <h3>Step 2 / 3</h3>
-                                        <p>Set up your account:</p>
-                                    </div>
-                                    <div class="form-top-right">
-                                        <i class="fa fa-key"></i>
-                                    </div>
-                                </div>
-                                <div class="form-bottom">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-email">Email</label>
-                                        <input type="text" name="form-email" placeholder="Email..."
-                                            class="form-email form-control" id="form-email" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-password">Password</label>
-                                        <input type="password" name="form-password" placeholder="Password..."
-                                            class="form-password form-control" id="form-password" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-repeat-password">Repeat password</label>
-                                        <input type="password" name="form-repeat-password"
-                                            placeholder="Repeat password..." class="form-repeat-password form-control"
-                                            id="form-repeat-password" />
-                                    </div>
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="button" class="btn btn-next">Next</button>
-                                </div>
-                            </fieldset>
-
-                            <fieldset>
-                                <div class="form-top">
-                                    <div class="form-top-left">
-                                        <h3>Step 3 / 3</h3>
-                                        <p>Social media profiles:</p>
-                                    </div>
-                                    <div class="form-top-right">
-                                        <i class="fa fa-twitter"></i>
-                                    </div>
-                                </div>
-                                <div class="form-bottom">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-facebook">Facebook</label>
-                                        <input type="text" name="form-facebook" placeholder="Facebook..."
-                                            class="form-facebook form-control" id="form-facebook" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-twitter">Twitter</label>
-                                        <input type="text" name="form-twitter" placeholder="Twitter..."
-                                            class="form-twitter form-control" id="form-twitter" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-google-plus">Google plus</label>
-                                        <input type="text" name="form-google-plus" placeholder="Google plus..."
-                                            class="form-google-plus form-control" id="form-google-plus" />
-                                    </div>
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="submit" class="btn">Sign me up!</button>
-                                </div>
-                            </fieldset>
-
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
+				</p:dataGrid>
+				<br /> <input type="button" name="next" class="next action-button" value="Siguiente" />
+			</fieldset>
 
 
+			<fieldset>
+				<h2 class="fs-title">Escoge talla, estilo y cantidad:</h2>
+				<br />
+				<panelGrid columns="1" style="margin-bottom:10px">
+					<p:outputLabel for="@next" value="Talla:   " />
+					<p:selectOneMenu value="#{beanTalla.talla}">
+						<f:selectItems value="#{beanTalla.listaTalla}" var="l" itemLabel="#{l.descripcion}"
+							itemValue="#{l.idTalla}" />
+					</p:selectOneMenu> <br /><br />
+
+					<p:outputLabel for="@next" value="Estilo:   " />
+					<p:selectOneMenu value="#{beanEstilo.estilo}">
+						<f:selectItems value="#{beanEstilo.listaEstilo}" var="l" itemLabel="#{l.nombre}"
+							itemValue="#{l.idEstilo}" />
+					</p:selectOneMenu> <br />
+
+					<h:outputLabel for="@next" value="Cantidad: " />
+					<p:spinner id="minMax" min="0" max="100" />
+					
+
+				</panelGrid>
+				<br/>
+					<br/>
+					<br/>
+					<br/>
+				<input type="button" name="previous" class="previous action-button" value="Regresar" />
+				<input type="button" name="next" class="next action-button" value="Siguiente" />
+			</fieldset>
 
 
+			<fieldset>
+				<h2 class="fs-title">Sube el logo que quieras para tu camiseta: </h2>
+				<p:inputText placeholder="Correo electrónico" required="true" />
+				<p:password placeholder="Contraseña" required="true" id="nonFeedback" />
+				<input type="button" name="previous" class="previous action-button" value="Regresar" />
+				<p:commandButton class="action-button" value="Registrar" />
+			</fieldset>
+		</h:form>
+	</div>
 
 
-
-
-    <!--=======ESTAS SON LAS LIBRERIAS PARA PERSONALIZAR LAS CAMISETAS ========================================================================================-->
-
-    <script src="assets/js/jquery-1.11.1.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.backstretch.min.js"></script>
-    <script src="assets/js/retina-1.1.0.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
-
-</body>
+	<script src="../resource/js/registro.js" />
+	</h:body>
 
 </html>
