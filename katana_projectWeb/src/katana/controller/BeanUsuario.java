@@ -3,6 +3,8 @@ package katana.controller;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 import katana.controller.JSFUtil;
@@ -61,7 +63,11 @@ public class BeanUsuario implements Serializable {
 	 !panelColapsado_usuario; }
 	 
 
-	public void actionListenerInsertarUsuario() {
+	public String actionListenerInsertarUsuario() {
+		/*
+		 * ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
+		 * String requestPath=ec.getRequestPathInfo();
+		 */
 		try {
 			
 			managerUsuario.insertarUsuario(usuario);
@@ -73,11 +79,13 @@ public class BeanUsuario implements Serializable {
 			listaUsuarioRol = managerUsuario.findAllUsuariosRol();
 			usuario = new UsuUsuario();
 			rol=new UsuRol();
-			JSFUtil.crearMensajeInfo("Registro con exito.");
+			JSFUtil.crearMensajeInfo("Registro con exito.");			
 		} catch (Exception e) {
 			JSFUtil.crearMensajeError(e.getMessage());
 			e.printStackTrace();
 		}
+		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+		return "/clientes/index.xhtml?faces-redirect=true";
 	}
 
 	public void actionListenerSeleccionarUsuario(UsuUsuario usuario) {
