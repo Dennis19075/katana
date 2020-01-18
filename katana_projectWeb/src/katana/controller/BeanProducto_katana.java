@@ -68,6 +68,11 @@ public class BeanProducto_katana implements Serializable{
 	    color=new ProColor();
 	    talla=new ProTalla();
 	    panelColapsado=true;
+	    productoSeleccionado=new ProProducto();
+	    productoSeleccionado.setProTipoProducto(tipo_producto);
+	    productoSeleccionado.setProTalla(talla);
+	    productoSeleccionado.setProColor(color);
+	    productoSeleccionado.setProEstilo(estilo);
 	}
 	
 	/*BEAN PARA pro_producto*/
