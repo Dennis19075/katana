@@ -60,14 +60,14 @@ public class ManagerEmpresa {
     	if(empresa!=null)
     		em.remove(empresa);
     }
-    public void actualizarEmpresa(AudEmpresa empresa, PedDivpolitica locacion) throws Exception {
+    public void actualizarEmpresa(AudEmpresa empresa) throws Exception {
     	AudEmpresa e=findEmpresaById(empresa.getIdEmpresa());
     	if(e==null)
     		throw new Exception("No existe esta Informacion");
     	e.setNombre(empresa.getNombre());
     	e.setDireccion(empresa.getDireccion());
     	e.setReferencia(empresa.getReferencia());
-    	e.setPedDivpolitica(locacion);
+    	e.setPedDivpolitica(empresa.getPedDivpolitica());
     	e.setTelefono1(empresa.getTelefono1());
     	e.setTelefono2(empresa.getTelefono2());
     	e.setMision(empresa.getMision());

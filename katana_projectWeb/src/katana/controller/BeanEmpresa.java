@@ -37,15 +37,14 @@ public class BeanEmpresa implements Serializable{
 	{
 		empresa = new AudEmpresa();
 		locacion = new PedDivpolitica();
+		empresaSeleccionada = new AudEmpresa();
+		empresaSeleccionada.setPedDivpolitica(locacion);
 		
 		listaProvincias = managerDPA.findAllProvincias();
 		listaCantones = managerDPA.findAllCantones();
 		listaEmpresa = managerEmpresa.findAllEmpresa();
 		
-		
-	   // listaColor=managerColor.findAllColor();
-	    //color=new ProColor();
-	    //panelColapsado_Color=true;
+	
 	}
 	
 	
@@ -72,15 +71,15 @@ public class BeanEmpresa implements Serializable{
 		}
 	}
 	
-	public void actionListenerSeleccionarEmpresa(AudEmpresa Empresa, PedDivpolitica Lugar) {
+	public void actionListenerSeleccionarEmpresa(AudEmpresa Empresa) {
 		empresaSeleccionada=Empresa;
-		locacion = Lugar;
+		
 	}
 	
 	public void actionListenerActualizarEmpresa() {
 		try {
 			locacion = managerDPA.findDPA(idCanton);
-			managerEmpresa.actualizarEmpresa(empresaSeleccionada, locacion);
+			managerEmpresa.actualizarEmpresa(empresaSeleccionada);
 			listaEmpresa=managerEmpresa.findAllEmpresa();
 			JSFUtil.crearMensajeInfo("Datos actualizados");
 		} catch (Exception e) {

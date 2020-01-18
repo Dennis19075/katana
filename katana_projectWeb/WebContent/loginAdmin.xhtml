@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Ingreso de usuarios</title>
+</h:head> 
+<body> 
+<p:growl>
+		<p:autoUpdate />
+	</p:growl>
+	
+	<h:form>
+	<p:panel header="MARKET DEMO - Autentificación de usuarios operadores">
+			<h:panelGrid>
+				Puede utilizar los siguientes usuarios de prueba:
+				<ul>
+					<li>Usuario supervisor: <b>luisa</b> clave:<b>supervisor</b>
+					</li>
+					<li>Usuario vendedor: <b>juan</b> clave:<b>vendedor</b>
+					</li>
+					<li>Usuario vendedor: <b>margarita</b> clave:<b>vendedor</b>
+					</li>
+				</ul>
+			</h:panelGrid>
+			<h:panelGrid columns="2">
+				<h:outputText value="Correo del usuario:" />
+				<p:inputText value="#{beanUsuario.usuario.correo}" required="true"
+					size="20" maxlength="100"
+					requiredMessage="Debe ingresar su correo de usuario." />
+				<h:outputText value="Clave:" />
+				<p:password value="#{beanUsuario.usuario.password}" required="true" size="20"
+					maxlength="10" requiredMessage="Debe ingresar su contraseña." />
+				<p:commandButton value="Ingresar" icon="fa fa-key"
+					action="#{beanUsuario.usuario.password}" update="mensajes" />
+				<p:messages id="mensajes" />
+			</h:panelGrid>
+		</p:panel>
+	
+	</h:form>
+</body> 
+</html>

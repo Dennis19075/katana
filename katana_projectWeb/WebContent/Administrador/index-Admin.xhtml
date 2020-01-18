@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Opciones supervisor</title>
+</h:head> 
+<body> 
+<h:form>
+		<p:menubar>
+			<p:menuitem value="Empresa" action="/auditoria/aud-empresa" icon="fa fa-building"></p:menuitem>
+			<p:menuitem value="Logo" action="/productos/producto-logo" icon="fa fa-area-chart"></p:menuitem>
+			<p:menuitem value="Camisetas" action="/productos/producto-camiseta" icon="fa fa-shirtsinbulk"></p:menuitem>
+			<p:menuitem value="Estilo" action="/productos/product-style" icon="fa fa-star"></p:menuitem>
+			<p:menuitem value="Tipo" action="/productos/product-type" icon="fa fa-paint-brush"></p:menuitem>
+			<p:menuitem value="Talla" action="/productos/product-size" icon="fa fa-transgender"></p:menuitem>
+			<p:menuitem value="Color" action="/productos/product-color" icon="fa fa-pie-chart"></p:menuitem>
+			<p:menuitem value="Iva" action="/ventas/ventas-iva" icon="fa fa-cog"></p:menuitem>
+			<f:facet name="options">
+				<p:commandButton value="Salir" icon="fa fa-sign-out"/>
+				<br />
+	
+			</f:facet>
+		</p:menubar>
+	</h:form>
+	<br />
+	<p:messages id="mensajes"></p:messages>
+</body> 
+</html>
