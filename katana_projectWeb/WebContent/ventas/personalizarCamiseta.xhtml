@@ -179,7 +179,7 @@
 							<img style="height: 150px;" src="../images/item-cart-01.jpg" />
 						</h:panelGrid>
 						<br />
-						<p:selectBooleanCheckbox value="#{selectBooleanView.value1}" />
+						<p:selectBooleanCheckbox value="#{beanPersonalizar.personalizada.}" />
 					</p:panel>
 
 				</p:dataGrid>
@@ -246,11 +246,13 @@
 	left: 270px;
 }
 </style>
-					<!--  <p:graphicImage name="demo/images/car/#{car.brand}.gif" /> -->
+					<!--  <p:graphicImage name="demo/images/car/#{car.brand}.gif" /> PARA PONER LA CAMISETA QUE ESCOGE-->
 					<img class="camiseta" style="height: 575px; width: 600px"
 						src="../images/katanaimg/camisetaBlancaEjemplo.jpg" />
 					<img class="disenio" style="height: 200px;"
 						src="../images/katanaimg/th1975.png" />
+						<h3>Observacion:</h3>
+						<p:inputTextarea rows="6" cols="33" value="#{beanPersonalizar.personalizada.observacion}"/>
 				</h:panelGrid>
 
 
