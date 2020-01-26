@@ -26,6 +26,9 @@ public class UsuUsuario implements Serializable {
 	@Column(nullable=false, length=50)
 	private String correo;
 
+	@Column(name="imagen_perfil", length=500)
+	private String imagenPerfil;
+
 	@Column(nullable=false, length=50)
 	private String nombre;
 
@@ -35,6 +38,10 @@ public class UsuUsuario implements Serializable {
 	//bi-directional many-to-one association to PedPedido
 	@OneToMany(mappedBy="usuUsuario")
 	private List<PedPedido> pedPedidos;
+
+	//bi-directional many-to-one association to ProProducto
+	@OneToMany(mappedBy="usuUsuario")
+	private List<ProProducto> proProductos;
 
 	//bi-directional many-to-one association to UsuUsuarioRol
 	@OneToMany(mappedBy="usuUsuario")
@@ -65,6 +72,14 @@ public class UsuUsuario implements Serializable {
 
 	public void setCorreo(String correo) {
 		this.correo = correo;
+	}
+
+	public String getImagenPerfil() {
+		return this.imagenPerfil;
+	}
+
+	public void setImagenPerfil(String imagenPerfil) {
+		this.imagenPerfil = imagenPerfil;
 	}
 
 	public String getNombre() {
@@ -103,6 +118,28 @@ public class UsuUsuario implements Serializable {
 		pedPedido.setUsuUsuario(null);
 
 		return pedPedido;
+	}
+
+	public List<ProProducto> getProProductos() {
+		return this.proProductos;
+	}
+
+	public void setProProductos(List<ProProducto> proProductos) {
+		this.proProductos = proProductos;
+	}
+
+	public ProProducto addProProducto(ProProducto proProducto) {
+		getProProductos().add(proProducto);
+		proProducto.setUsuUsuario(this);
+
+		return proProducto;
+	}
+
+	public ProProducto removeProProducto(ProProducto proProducto) {
+		getProProductos().remove(proProducto);
+		proProducto.setUsuUsuario(null);
+
+		return proProducto;
 	}
 
 	public List<UsuUsuarioRol> getUsuUsuarioRols() {

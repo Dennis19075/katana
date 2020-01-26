@@ -20,7 +20,7 @@ public class PedEstado implements Serializable {
 	@Column(name="id_estado", unique=true, nullable=false)
 	private Integer idEstado;
 
-	@Column(nullable=false, length=50)
+	@Column(nullable=false, length=500)
 	private String descripcion;
 
 	@Column(length=50)
