@@ -27,9 +27,9 @@ public class ProLogo implements Serializable {
 	@Column(nullable=false, precision=10, scale=2)
 	private BigDecimal precio;
 
-	//bi-directional many-to-one association to ProPersonalizado
+	//bi-directional many-to-one association to ProProducto
 	@OneToMany(mappedBy="proLogo")
-	private List<ProPersonalizado> proPersonalizados;
+	private List<ProProducto> proProductos;
 
 	public ProLogo() {
 	}
@@ -58,26 +58,26 @@ public class ProLogo implements Serializable {
 		this.precio = precio;
 	}
 
-	public List<ProPersonalizado> getProPersonalizados() {
-		return this.proPersonalizados;
+	public List<ProProducto> getProProductos() {
+		return this.proProductos;
 	}
 
-	public void setProPersonalizados(List<ProPersonalizado> proPersonalizados) {
-		this.proPersonalizados = proPersonalizados;
+	public void setProProductos(List<ProProducto> proProductos) {
+		this.proProductos = proProductos;
 	}
 
-	public ProPersonalizado addProPersonalizado(ProPersonalizado proPersonalizado) {
-		getProPersonalizados().add(proPersonalizado);
-		proPersonalizado.setProLogo(this);
+	public ProProducto addProProducto(ProProducto proProducto) {
+		getProProductos().add(proProducto);
+		proProducto.setProLogo(this);
 
-		return proPersonalizado;
+		return proProducto;
 	}
 
-	public ProPersonalizado removeProPersonalizado(ProPersonalizado proPersonalizado) {
-		getProPersonalizados().remove(proPersonalizado);
-		proPersonalizado.setProLogo(null);
+	public ProProducto removeProProducto(ProProducto proProducto) {
+		getProProductos().remove(proProducto);
+		proProducto.setProLogo(null);
 
-		return proPersonalizado;
+		return proProducto;
 	}
 
 }

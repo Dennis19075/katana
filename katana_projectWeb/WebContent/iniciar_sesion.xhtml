@@ -123,9 +123,10 @@
 
 					<a href="./perfil/index.xhtml">
 						<div class="container-login100-form-btn">
-							<button class="login100-form-btn">
-								Inicia sesion
-							</button>
+							<p:commandButton value="Ingresar" icon="fa fa-key"
+					action="#{beanLogin.accederSistema()}" update="mensajes" />
+				<p:messages id="mensajes" />
+							
 						</div>
 					</a>
 

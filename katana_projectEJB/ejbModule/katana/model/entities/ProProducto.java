@@ -2,6 +2,7 @@ package katana.model.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.List;
 
 
@@ -23,10 +24,10 @@ public class ProProducto implements Serializable {
 	@Column(length=500)
 	private String descripcion;
 
-	@Column(nullable=false, length=100)
+	@Column(nullable=false, length=500)
 	private String imagen1;
 
-	@Column(length=100)
+	@Column(length=500)
 	private String imagen2;
 
 	@Column(length=500)
@@ -38,9 +39,17 @@ public class ProProducto implements Serializable {
 	@Column(nullable=false)
 	private Boolean personalizado;
 
+	@Column(name="precio_personalizado", precision=10, scale=2)
+	private BigDecimal precioPersonalizado;
+
 	//bi-directional many-to-one association to ProCatalogo
 	@OneToMany(mappedBy="proProducto")
 	private List<ProCatalogo> proCatalogos;
+
+	//bi-directional many-to-one association to ProCamiseta
+	@ManyToOne
+	@JoinColumn(name="id_camiseta")
+	private ProCamiseta proCamiseta;
 
 	//bi-directional many-to-one association to ProColor
 	@ManyToOne
@@ -52,10 +61,10 @@ public class ProProducto implements Serializable {
 	@JoinColumn(name="estilo", nullable=false)
 	private ProEstilo proEstilo;
 
-	//bi-directional many-to-one association to ProPersonalizado
+	//bi-directional many-to-one association to ProLogo
 	@ManyToOne
-	@JoinColumn(name="id_personalizado")
-	private ProPersonalizado proPersonalizado;
+	@JoinColumn(name="id_logo")
+	private ProLogo proLogo;
 
 	//bi-directional many-to-one association to ProTalla
 	@ManyToOne
@@ -66,6 +75,11 @@ public class ProProducto implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="id_tipo_producto")
 	private ProTipoProducto proTipoProducto;
+
+	//bi-directional many-to-one association to UsuUsuario
+	@ManyToOne
+	@JoinColumn(name="id_usuario")
+	private UsuUsuario usuUsuario;
 
 	public ProProducto() {
 	}
@@ -126,6 +140,14 @@ public class ProProducto implements Serializable {
 		this.personalizado = personalizado;
 	}
 
+	public BigDecimal getPrecioPersonalizado() {
+		return this.precioPersonalizado;
+	}
+
+	public void setPrecioPersonalizado(BigDecimal precioPersonalizado) {
+		this.precioPersonalizado = precioPersonalizado;
+	}
+
 	public List<ProCatalogo> getProCatalogos() {
 		return this.proCatalogos;
 	}
@@ -148,6 +170,14 @@ public class ProProducto implements Serializable {
 		return proCatalogo;
 	}
 
+	public ProCamiseta getProCamiseta() {
+		return this.proCamiseta;
+	}
+
+	public void setProCamiseta(ProCamiseta proCamiseta) {
+		this.proCamiseta = proCamiseta;
+	}
+
 	public ProColor getProColor() {
 		return this.proColor;
 	}
@@ -164,12 +194,12 @@ public class ProProducto implements Serializable {
 		this.proEstilo = proEstilo;
 	}
 
-	public ProPersonalizado getProPersonalizado() {
-		return this.proPersonalizado;
+	public ProLogo getProLogo() {
+		return this.proLogo;
 	}
 
-	public void setProPersonalizado(ProPersonalizado proPersonalizado) {
-		this.proPersonalizado = proPersonalizado;
+	public void setProLogo(ProLogo proLogo) {
+		this.proLogo = proLogo;
 	}
 
 	public ProTalla getProTalla() {
@@ -186,6 +216,14 @@ public class ProProducto implements Serializable {
 
 	public void setProTipoProducto(ProTipoProducto proTipoProducto) {
 		this.proTipoProducto = proTipoProducto;
+	}
+
+	public UsuUsuario getUsuUsuario() {
+		return this.usuUsuario;
+	}
+
+	public void setUsuUsuario(UsuUsuario usuUsuario) {
+		this.usuUsuario = usuUsuario;
 	}
 
 }

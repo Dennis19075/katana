@@ -13,7 +13,6 @@
 		<class>katana.model.entities.ProColor</class>
 		<class>katana.model.entities.ProEstilo</class>
 		<class>katana.model.entities.ProLogo</class>
-		<class>katana.model.entities.ProPersonalizado</class>
 		<class>katana.model.entities.ProProducto</class>
 		<class>katana.model.entities.ProTalla</class>
 		<class>katana.model.entities.ProTipoProducto</class>

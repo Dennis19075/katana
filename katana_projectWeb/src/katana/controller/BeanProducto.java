@@ -6,11 +6,13 @@ import javax.inject.Named;
 
 import katana.controller.JSFUtil;
 import katana.model.entities.ProColor;
+import katana.model.entities.ProProducto;
 import katana.model.entities.ProTalla;
 import katana.model.entities.ProTipoProducto;
 import katana.model.manager.ManagerProducto;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Named
@@ -23,12 +25,52 @@ public class BeanProducto implements Serializable{
 	private ProTipoProducto tipo_producto;
 	private boolean panelColapsado;
 	private ProTipoProducto tipo_productoSeleccionado;
+	private List<ProProducto> listaProducto;
+	private ProProducto producto;
+	private ProProducto productoSeleccionado;
 	@PostConstruct
 	public void inicializar() 
 	{
 	    listaTipoProducto=managerProducto.findAllTipoProducto();
+	    listaProducto = managerProducto.findAllProducto();
 	    tipo_producto=new ProTipoProducto();
+	    producto = new ProProducto();
 	    panelColapsado=true;
+	}
+	
+	/*BEAN PARA pro_producto*/
+	public void actionListenerInsertarProducto() {
+		try {
+			
+			managerProducto.insertarProducto(producto);
+			listaProducto=managerProducto.findAllProducto();
+			producto=new ProProducto();
+			JSFUtil.crearMensajeInfo("Se ha insertado el Producto");
+		} catch (Exception e) {
+			JSFUtil.crearMensajeError(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	public void actionListenerSeleccionarProducto(ProProducto producto) {
+		productoSeleccionado=producto;
+	}
+	
+	public void actionListenerActualizarProducto() {
+		try {
+			managerProducto.actualizarProducto(productoSeleccionado);
+			listaProducto=managerProducto.findAllProducto();
+			JSFUtil.crearMensajeInfo("Datos actualizados");
+		} catch (Exception e) {
+			listaProducto=managerProducto.findAllProducto();
+			JSFUtil.crearMensajeError(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	public void actionListenerEliminarProducto(int id) {
+		managerProducto.eliminarProducto(id);
+		listaProducto=managerProducto.findAllProducto();
+		JSFUtil.crearMensajeInfo("Producto eliminado");
 	}
 	
 	/*BEAN PARA pro_tipo_producto*/
@@ -90,6 +132,35 @@ public class BeanProducto implements Serializable{
 	public void setTipo_productoSeleccionado(ProTipoProducto tipo_productoSeleccionado) {
 		this.tipo_productoSeleccionado = tipo_productoSeleccionado;
 	}
+
+	public ProProducto getProducto() {
+		return producto;
+	}
+
+	public void setProducto(ProProducto producto) {
+		this.producto = producto;
+	}
+
+	public List<ProProducto> getListaProducto() {
+		return listaProducto;
+	}
+
+	public void setListaProducto(List<ProProducto> listaProducto) {
+		this.listaProducto = listaProducto;
+	}
+
+	public ProProducto getProductoSeleccionado() {
+		return productoSeleccionado;
+	}
+
+	public void setProductoSeleccionado(ProProducto productoSeleccionado) {
+		this.productoSeleccionado = productoSeleccionado;
+	}
+	
+	
+	
+	
+	
 	
 	
 
