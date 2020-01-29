@@ -16,6 +16,15 @@
 	<p:growl>
 		<p:autoUpdate />
 	</p:growl>
+	<h:form>
+		<p:menubar>
+			<p:menuitem>ADMINISTRADOR ESTADO</p:menuitem>
+			<p:submenu style="margin-left:75%;" label="#{beanLogin.nombre}" icon="fa fa-user">
+            	<p:menuitem value="Salir" action="#{beanLogin.salirSistema()}"/>
+        	</p:submenu>
+		</p:menubar>
+	</h:form>
+	
 	<h:form id="form1">
 		<p:messages>
 			<p:autoUpdate />
@@ -65,7 +74,16 @@
 						update=":formEdicion" oncomplete="PF('dlgEdicion').show();"></p:commandButton>
 				</p:column>
 			</p:dataTable>
+			
 		</p:panel>
+		
+	
+	</h:form>
+	<br />
+	<h:form>
+	<p:commandButton value="Inicio" action="/Usuario_administrador/index_admin"
+					icon="fa fa-home">
+				</p:commandButton >
 	</h:form>
 	<p:dialog header="Editar información" widgetVar="dlgEdicion"
 		modal="true">

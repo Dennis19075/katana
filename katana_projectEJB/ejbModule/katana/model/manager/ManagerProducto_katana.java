@@ -42,6 +42,20 @@ public class ManagerProducto_katana {
     public ProProducto findProductoById(int id) {
     	return em.find(ProProducto.class, id);
     }
+    
+    public ProProducto findProductoByUltimoProducto() {
+    	List<ProProducto> lista_producto=this.findAllProducto();
+    	int cont=0;
+    		for (ProProducto p: lista_producto) 
+        	{
+        		if(p.getIdProducto()>cont) 
+        		{
+        			cont=p.getIdProducto();
+        		}
+        	} 
+    		
+    	return em.find(ProProducto.class, cont);
+    }
     public void insertarProducto(ProProducto producto, ProTalla talla, ProColor color, ProTipoProducto tipo_producto,
     		ProEstilo estilo) throws Exception {
         ProProducto tipo=new ProProducto();

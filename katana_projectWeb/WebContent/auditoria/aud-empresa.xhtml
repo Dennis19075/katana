@@ -17,6 +17,14 @@
 		<p:autoUpdate />
 	</p:growl>
 	<h:form>
+		<p:menubar>
+			<p:menuitem>ADMINISTRADOR EMPRESA</p:menuitem>
+			<p:submenu style="margin-left:75%;" label="#{beanLogin.nombre}" icon="fa fa-user">
+            	<p:menuitem value="Salir" action="#{beanLogin.salirSistema()}"/>
+        	</p:submenu>
+		</p:menubar>
+	</h:form>
+	<h:form>
 		<p:messages>
 			<p:autoUpdate />
 		</p:messages>
