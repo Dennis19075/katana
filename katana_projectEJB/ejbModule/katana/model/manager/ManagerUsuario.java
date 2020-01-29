@@ -45,6 +45,19 @@ public class ManagerUsuario {
     	return em.find(UsuUsuario.class, id);
     }
     
+    public UsuUsuario findUsuarioByMail(String correo) {
+    	UsuUsuario usu = new UsuUsuario();
+    	List<UsuUsuario> listaUsu = this.findAllUsuarios();
+    	
+    	for (int i = 0; i < listaUsu.size(); i++) {
+			if (listaUsu.get(i).getCorreo().equals(correo)) {
+				usu = listaUsu.get(i);
+				break;
+			}
+		}
+    	return usu;
+    }
+    
     public int findIdUsuarioMayor() 
     {
     	int cont=0;

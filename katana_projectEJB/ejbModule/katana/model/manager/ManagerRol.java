@@ -1,7 +1,7 @@
 package katana.model.manager;
 
 import katana.model.entities.UsuRol;
-import katana.model.entities.UsuUsuario;
+import katana.model.entities.UsuUsuarioRol;
 
 import java.util.List;
 
@@ -59,6 +59,19 @@ public class ManagerRol {
     	e.setDescripcion(rol.getDescripcion());
     	em.merge(e);
     	
+    }
+    
+    public UsuRol findRolByUser(UsuUsuarioRol usuarioRol) {
+    	UsuRol rol = new UsuRol();
+    	List<UsuRol> listaRoles = this.findAllROl();
+    	
+    	for (int i = 0; i < listaRoles.size(); i++) {
+			if (listaRoles.get(i).getIdRol() == usuarioRol.getIdUsuarioRol()) { //compara el usuarioRol del Usuario.getUsuarioRol con el rol de la lista
+				rol = listaRoles.get(i);
+				break;
+			}
+		}
+    	return rol;
     }
 
 }

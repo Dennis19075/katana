@@ -20,7 +20,8 @@ import java.io.Serializable;
 @javax.enterprise.context.SessionScoped
 public class BeanLogin implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private String codigoUsuario;
+	private String nombre;
+	private String correoUsuario;
 	private String clave;
 	private String tipoUsuario;
 	private boolean acceso;
@@ -42,7 +43,8 @@ public class BeanLogin implements Serializable {
 	public String accederSistema(){
 		acceso=false;
 		try {
-			loginDTO=managerSeguridad.accederSistema(codigoUsuario, clave);
+			loginDTO=managerSeguridad.accederSistema(correoUsuario, clave);
+			nombre = managerSeguridad.getNombreUsuario(correoUsuario);
 			//verificamos el acceso del usuario:
 			tipoUsuario=loginDTO.getTipoUsuario();
 			//redireccion dependiendo del tipo de usuario:
@@ -73,7 +75,7 @@ public class BeanLogin implements Serializable {
 			e.printStackTrace();
 		}
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-		return "/index.html?faces-redirect=true";
+		return "/landingPage.xhtml?faces-redirect=true";
 	}
 	
 	public void actionVerificarLogin(){
@@ -97,14 +99,14 @@ public class BeanLogin implements Serializable {
 		}
 	}
 
-	public String getCodigoUsuario() {
-		return codigoUsuario;
-	}
+	
 
-	public void setCodigoUsuario(String codigoUsuario) {
-		this.codigoUsuario = codigoUsuario;
+	public String getCorreoUsuario() {
+		return correoUsuario;
 	}
-
+	public void setCorreoUsuario(String correoUsuario) {
+		this.correoUsuario = correoUsuario;
+	}
 	public String getClave() {
 		return clave;
 	}
@@ -124,5 +126,13 @@ public class BeanLogin implements Serializable {
 	public void setTipoUsuario(String tipoUsuario) {
 		this.tipoUsuario = tipoUsuario;
 	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	
 	
 }

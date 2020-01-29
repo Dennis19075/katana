@@ -117,6 +117,7 @@ public class ManagerDAO {
 		}
 		return o;
 	}
+	
 
 	/**
 	 * Finder generico que permite aplicar clausulas where y order by. <b>Atencion</b>: este metodo
