@@ -16,6 +16,16 @@
 	<p:growl>
 		<p:autoUpdate />
 	</p:growl>
+	<h:form>
+		<p:menubar>
+		<p:menuitem>ADMINISTRADOR ROL</p:menuitem>
+		<f:facet name="options">
+				<p:commandButton value="Salir" icon="fa fa-sign-out"/>
+				<br />
+	
+			</f:facet>
+		</p:menubar>
+	</h:form>
 	<h:form id="form1">
 		<p:messages>
 			<p:autoUpdate />
@@ -66,6 +76,12 @@
 				</p:column>
 			</p:dataTable>
 		</p:panel>
+	</h:form>
+	<br />
+	<h:form>
+	<p:commandButton value="Inicio" action="/Administrador/index-Admin"
+					icon="fa fa-home">
+				</p:commandButton >
 	</h:form>
 	<p:dialog header="Editar información" widgetVar="dlgEdicion"
 		modal="true">

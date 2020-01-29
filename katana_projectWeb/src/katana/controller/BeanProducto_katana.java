@@ -5,11 +5,13 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 import katana.controller.JSFUtil;
+import katana.model.entities.ProCatalogo;
 import katana.model.entities.ProColor;
 import katana.model.entities.ProEstilo;
 import katana.model.entities.ProProducto;
 import katana.model.entities.ProTalla;
 import katana.model.entities.ProTipoProducto;
+import katana.model.manager.ManagerCatalogo;
 import katana.model.manager.ManagerColor;
 import katana.model.manager.ManagerEstilo;
 import katana.model.manager.ManagerProducto;
@@ -33,6 +35,8 @@ public class BeanProducto_katana implements Serializable{
 	private ManagerColor managerColor;
 	@EJB
 	private ManagerTalla managerTalla;
+	@EJB
+	private ManagerCatalogo managerCatalogo;
 	
 	private List<ProProducto> listaProducto;
 	private List<ProTipoProducto> listaTipoProducto;
@@ -45,6 +49,7 @@ public class BeanProducto_katana implements Serializable{
 	private ProEstilo estilo;
 	private ProColor color;
 	private ProTalla talla;
+	private ProCatalogo catalogo;
 	
 	private boolean panelColapsado;
 	
@@ -67,6 +72,7 @@ public class BeanProducto_katana implements Serializable{
 	    estilo=new ProEstilo();
 	    color=new ProColor();
 	    talla=new ProTalla();
+	    catalogo=new ProCatalogo();
 	    panelColapsado=true;
 	    productoSeleccionado=new ProProducto();
 	    productoSeleccionado.setProTipoProducto(tipo_producto);
@@ -84,6 +90,8 @@ public class BeanProducto_katana implements Serializable{
 		try {
 			managerProducto.insertarProducto(producto,talla,color,tipo_producto,estilo);
 			listaProducto=managerProducto.findAllProducto();
+			producto=managerProducto.findProductoByUltimoProducto();
+			managerCatalogo.insertarCatalogo(catalogo, producto);
 			producto=new ProProducto();
 			tipo_producto=new ProTipoProducto();
 		    estilo=new ProEstilo();
@@ -111,9 +119,10 @@ public class BeanProducto_katana implements Serializable{
 		}
 	}
 	public void actionListenerEliminarProducto(int id) {
+		managerCatalogo.eliminarCatalogo(managerCatalogo.findCatalogoByIdProducto(id).getIdCatalogo());
 		managerProducto.eliminarProducto(id);
 		listaProducto=managerProducto.findAllProducto();
-		JSFUtil.crearMensajeInfo("Producto eliminado");
+		JSFUtil.crearMensajeInfo("Producto eliminado con su respectivo catálogo");
 	}
 
 	public List<ProProducto> getListaProducto() {

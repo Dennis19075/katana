@@ -1,33 +1,71 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Opciones supervisor</title>
-</h:head> 
-<body> 
-<h:form>
+</h:head>
+
+
+
+<body>
+
+	<h:form>
+
+
+		<p:sidebar widgetVar="sidebar3" position="top" baseZIndex="10000">
+			<h1 style="font-weight: normal">Top Sidebar</h1>
+		</p:sidebar>
 		<p:menubar>
-			<p:menuitem value="Empresa" action="/auditoria/aud-empresa" icon="fa fa-building"></p:menuitem>
-			<p:menuitem value="Logo" action="/productos/producto-logo" icon="fa fa-area-chart"></p:menuitem>
-			<p:menuitem value="Camisetas" action="/productos/producto-camiseta" icon="fa fa-shirtsinbulk"></p:menuitem>
-			<p:menuitem value="Estilo" action="/productos/product-style" icon="fa fa-star"></p:menuitem>
-			<p:menuitem value="Tipo" action="/productos/product-type" icon="fa fa-paint-brush"></p:menuitem>
-			<p:menuitem value="Talla" action="/productos/product-size" icon="fa fa-transgender"></p:menuitem>
-			<p:menuitem value="Color" action="/productos/product-color" icon="fa fa-pie-chart"></p:menuitem>
-			<p:menuitem value="Iva" action="/ventas/ventas-iva" icon="fa fa-cog"></p:menuitem>
+			<p:menuitem>ADMINISTRADOR</p:menuitem>
 			<f:facet name="options">
-				<p:commandButton value="Salir" icon="fa fa-sign-out"/>
+				<p:commandButton value="Salir" icon="fa fa-sign-out" />
 				<br />
-	
+
 			</f:facet>
 		</p:menubar>
+		<p:megaMenu orientation="vertical" style="margin-top:20px">
+			<p:menuitem value="Empresa" action="/auditoria/aud-empresa"
+				icon="fa fa-building"></p:menuitem>
+			<p:menuitem value="Logo" action="/Usuario_administrador/product_logo"
+				icon="fa fa-area-chart"></p:menuitem>
+			<p:menuitem value="Camisetas"
+				action="/Usuario_administrador/product_shirt"
+				icon="fa fa-shirtsinbulk"></p:menuitem>
+			<p:menuitem value="Estilo"
+				action="/Usuario_administrador/product_style" icon="fa fa-star"></p:menuitem>
+			<p:menuitem value="Tipo" action="/Usuario_administrador/product_type"
+				icon="fa fa-paint-brush"></p:menuitem>
+			<p:menuitem value="Talla"
+				action="/Usuario_administrador/product_size"
+				icon="fa fa-transgender"></p:menuitem>
+			<p:menuitem value="Color"
+				action="/Usuario_administrador/product_color" icon="fa fa-pie-chart"></p:menuitem>
+			<p:menuitem value="Iva" action="/Usuario_administrador/product_iva"
+				icon="fa fa-usd"></p:menuitem>
+				
+				<p:menuitem value="Estado Pedidos" action="/Usuario_administrador/order_status"
+				icon="fa fa-bar-chart"></p:menuitem>
+				<p:menuitem value="Detalles Producto" action="/Usuario_administrador/product_detail"
+				icon="fa fa-cart-plus"></p:menuitem>
+				<p:menuitem value="Roles" action="/Usuario_administrador/roles"
+				icon="fa fa-slideshare"></p:menuitem>
+				<p:menuitem value="Registro Usuarios" action="/Usuario_administrador/user_register"
+				icon="fa fa-user-plus"></p:menuitem>
+				<p:menuitem value="Roles Sistema" action="/Usuario_administrador/user_role"
+				icon="fa fa-users"></p:menuitem>
+
+
+		</p:megaMenu>
+
 	</h:form>
 	<br />
+
 	<p:messages id="mensajes"></p:messages>
-</body> 
+
+</body>
 </html>
