@@ -13,9 +13,7 @@
 	</f:facet>
 </h:head>
 <body>
-	<p:growl>
-		<p:autoUpdate />
-	</p:growl>
+	
 	<h:form>
 		<p:menubar>
 			<p:menuitem>ADMINISTRADOR CATALOGO</p:menuitem>
@@ -26,7 +24,13 @@
 	</h:form>
 
 <br />
+<p:growl>
+		<p:autoUpdate />
+	</p:growl>
 	<h:form id="form2">
+	<p:messages>
+			<p:autoUpdate />
+		</p:messages>
 		<p:panel header="Datos del Catálogo">
 			<p:dataTable value="#{beanCatalogo.listaCatalogo}" reflow="true"
 				var="catalogo" paginator="true" rows="5">
