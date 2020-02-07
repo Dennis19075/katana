@@ -4,6 +4,7 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import katana.model.dto.LoginDTO;
@@ -25,6 +26,8 @@ public class BeanLogin implements Serializable {
 	private String clave;
 	private String tipoUsuario;
 	private boolean acceso;
+	
+	private LoginDTO usuarioIniciado;
 	@EJB
 	private ManagerSeguridad managerSeguridad;
 	/*
@@ -35,6 +38,7 @@ public class BeanLogin implements Serializable {
 	@PostConstruct
 	public void inicializar() {
 		loginDTO=new LoginDTO();
+		usuarioIniciado = new LoginDTO();
 	}
 	/**
 	 * Action que permite el acceso al sistema.
@@ -44,7 +48,7 @@ public class BeanLogin implements Serializable {
 		acceso=false;
 		try {
 			loginDTO=managerSeguridad.accederSistema(correoUsuario, clave);
-			nombre = managerSeguridad.getNombreUsuario(correoUsuario);
+			nombre = loginDTO.getUsuario();
 			//verificamos el acceso del usuario:
 			tipoUsuario=loginDTO.getTipoUsuario();
 			//redireccion dependiendo del tipo de usuario:
@@ -132,6 +136,23 @@ public class BeanLogin implements Serializable {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	public LoginDTO getUsuarioIniciado() {
+		return usuarioIniciado;
+	}
+	public void setUsuarioIniciado(LoginDTO usuarioIniciado) {
+		this.usuarioIniciado = usuarioIniciado;
+	}
+	public LoginDTO getLoginDTO() {
+		return loginDTO;
+	}
+	public void setLoginDTO(LoginDTO loginDTO) {
+		this.loginDTO = loginDTO;
+	}
+	
+	
+	
+	
+	
 	
 	
 	

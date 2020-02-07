@@ -56,10 +56,13 @@ public class ManagerSeguridad {
 		LoginDTO loginDTO=new LoginDTO();
 		
 		loginDTO.setUsuario(usuario.getNombre());
-		loginDTO.setUsuario(usuario.getApellido());
-		loginDTO.setUsuario(usuario.getCorreo());
-		loginDTO.setUsuario(rol.getNombre());
-
+		loginDTO.setApellido(usuario.getApellido());
+		loginDTO.setCorreo(usuario.getCorreo());
+		loginDTO.setImagen(usuario.getImagenPerfil());
+		
+		loginDTO.setPedidos(usuario.getPedPedidos());
+		loginDTO.setProductos(usuario.getProProductos());
+	
 		//dependiendo del tipo de usuario, configuramos la ruta de acceso a las pags web:
 		if(rol.getNombre().equals("Cliente"))
 			loginDTO.setRutaAcceso("/Usuario_final/user_profile.xhtml");
