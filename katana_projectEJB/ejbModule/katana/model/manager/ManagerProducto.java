@@ -1,6 +1,7 @@
 package katana.model.manager;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.LocalBean;

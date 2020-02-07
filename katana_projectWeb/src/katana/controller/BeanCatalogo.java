@@ -5,8 +5,12 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import katana.controller.JSFUtil;
 import katana.model.entities.ProCatalogo;
+import katana.model.entities.ProProducto;
 import katana.model.manager.ManagerCatalogo;
+import katana.model.manager.ManagerProducto;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Named
@@ -22,7 +26,7 @@ public class BeanCatalogo implements Serializable{
 	@PostConstruct
 	public void inicializar() 
 	{
-	
+		
 	    listaCatalogo=managerCatalogo.findAllCatalogo();
 	    catalogo=new ProCatalogo();
 	}
@@ -44,6 +48,11 @@ public class BeanCatalogo implements Serializable{
 			JSFUtil.crearMensajeError(e.getMessage());
 			e.printStackTrace();
 		}
+	}
+	
+	public String actionListenerProductoDetalle(ProCatalogo cat){
+		this.catalogoSeleccionado = cat;
+		return "/Usuario_final/product_detail";
 	}
 
 
@@ -81,7 +90,11 @@ public class BeanCatalogo implements Serializable{
 	public void setCatalogoSeleccionado(ProCatalogo catalogoSeleccionado) {
 		this.catalogoSeleccionado = catalogoSeleccionado;
 	}
-	
+
+
+
+
+
 	
 	
 	

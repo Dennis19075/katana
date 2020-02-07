@@ -323,9 +323,8 @@
 
 								<p:commandLink update=":form"
 									title="Ver producto">
-									<h:outputText styleClass="pi pi-search" style="margin:0 auto;" />
-									<f:setPropertyActionListener value="#{cat}"
-										target="#{beanCatalogo.actionListenerSeleccionarCatalogo()}" />
+									<p:commandButton value="Ver Producto" update="@form"
+							action="#{beanCatalogo.actionListenerProductoDetalle(cat)}"></p:commandButton>
 								</p:commandLink>
 								
 							</h:panelGrid>

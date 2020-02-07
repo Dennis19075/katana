@@ -3,7 +3,6 @@
 	<name>katana_projectEJB</name>
 	<comment></comment>
 	<projects>
-		<project>katana_projectWeb</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
