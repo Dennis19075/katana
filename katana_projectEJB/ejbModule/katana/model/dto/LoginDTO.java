@@ -2,8 +2,14 @@ package katana.model.dto;
 
 import java.util.List;
 
+import javax.ejb.EJB;
+
+import katana.controller.BeanUsuario;
+import katana.controller.JSFUtil;
 import katana.model.entities.PedPedido;
 import katana.model.entities.ProProducto;
+import katana.model.entities.UsuUsuario;
+import katana.model.manager.ManagerUsuario;
 
 /**
  * DTO para el acceso al sistema.
@@ -18,9 +24,27 @@ public class LoginDTO {
 	private String apellido;
 	private String correo; //este no se si va porque creo que codigoUsuario ya es el correo
 	private String imagen;
+	private String password;
 	private List<PedPedido> pedidos;
 	private List<ProProducto> productos;
 	
+	private UsuUsuario usuarioSeleccionado;
+	
+	private ManagerUsuario managerUsuario;
+	
+	public void actionListenerSeleccionarUsuario(UsuUsuario usuario) {
+		usuarioSeleccionado = usuario;
+	}
+
+	public void actionListenerActualizarUsuario() {
+		try {
+			managerUsuario.actualizarUsuario(usuarioSeleccionado);
+			JSFUtil.crearMensajeInfo("Datos actualizados.");
+		} catch (Exception e) {
+			JSFUtil.crearMensajeError(e.getMessage());
+			e.printStackTrace();
+		}
+	}
 	
 	
 	public String getUsuario() {
@@ -76,6 +100,12 @@ public class LoginDTO {
 	}
 	public void setProductos(List<ProProducto> productos) {
 		this.productos = productos;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	

@@ -59,6 +59,7 @@ public class ManagerSeguridad {
 		loginDTO.setApellido(usuario.getApellido());
 		loginDTO.setCorreo(usuario.getCorreo());
 		loginDTO.setImagen(usuario.getImagenPerfil());
+		loginDTO.setPassword(usuario.getPassword());
 		
 		loginDTO.setPedidos(usuario.getPedPedidos());
 		loginDTO.setProductos(usuario.getProProductos());
