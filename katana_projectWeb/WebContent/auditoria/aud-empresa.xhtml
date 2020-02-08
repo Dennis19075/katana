@@ -43,8 +43,8 @@
 
 			<h:outputLabel value="Provincia" />
 			<p:selectOneMenu value="#{beanEmpresa.idProvincia}">
-				<f:selectItems value="#{beanEmpresa.listaprovincias}" var="p"
-					itemLabel="#{p.nombre}" itemValue="#{p.idDivpolitica}" />
+				<f:selectItems value="#{beanEmpresa.listaprovincias}" var="m"
+					itemLabel="#{m.nombre}" itemValue="#{m.idDivpolitica}" />
 				<p:ajax event="change"
 					listener="#{beanEmpresa.actionListenerCantones()}"
 					update="Cantones" />
